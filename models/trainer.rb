@@ -44,4 +44,11 @@ class Trainer
     values = [@first_name, @last_name, @id]
     SqlRunner.run(sql, values)
   end
+
+  def delete()
+    sql = "DELETE FROM trainers
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
 end

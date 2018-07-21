@@ -20,3 +20,7 @@ trainer1.first_name = "John"
 trainer1.update
 training1.type = "Show jumping"
 training1.update
+horse1.delete
+
+training3 = Training.new({'horse_id' => horse2.id, 'type' => 'Dressage', 'date' => '25/04/18', 'trainer_id' => trainer1.id, 'day_of_week' => 'Wednesday', 'duration' => 1})
+training3.save

@@ -43,4 +43,11 @@ class Horse
     SqlRunner.run(sql, values)
   end
 
+  def delete()
+    sql = "DELETE FROM horses
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
 end
