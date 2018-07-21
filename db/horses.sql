@@ -10,7 +10,7 @@ CREATE TABLE trainers (
 
 CREATE TABLE horses (
   id SERIAL4 PRIMARY KEY,
-  name VARCHAR(255),
+  name VARCHAR(255) NOT NULL,
   breed VARCHAR(255),
   health_details TEXT,
   current_activity VARCHAR(255)
