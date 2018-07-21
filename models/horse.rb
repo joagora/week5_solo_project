@@ -1,5 +1,7 @@
 require_relative('../db/sql_runner')
 class Horse
+
+  attr_reader :id
   def initialize options
     @id = options['id'].to_s if options['id']
     @name = options['name']
