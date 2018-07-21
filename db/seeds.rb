@@ -13,6 +13,5 @@ trainer2.save
 training1 = Training.new({'horse_id' => horse1.id, 'type' => 'Dressage', 'date' => '25/04/18', 'trainer_id' => trainer1.id, 'day_of_week' => 'Monday', 'duration' => 1})
 training1.save
 training2 = Training.new({'horse_id' => horse1.id, 'type' => 'Show jumping', 'date' => '25/04/18', 'trainer_id' => trainer2.id, 'day_of_week' => 'Tuesday', 'duration' => 1})
-p Horse.all
-p Trainer.all
-p Training.all
+
+p Training.find(1)

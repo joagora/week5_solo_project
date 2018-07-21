@@ -31,4 +31,12 @@ class Training
     results = SqlRunner.run(sql)
     return results.map {|training| Training.new(training)}
   end
+
+  def self.find(id)
+    sql = "SELECT * FROM trainings
+    WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values).first
+    return Training.new(result)
+  end
 end
