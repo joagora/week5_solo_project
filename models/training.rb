@@ -1,5 +1,6 @@
 require_relative('../db/sql_runner')
 class Training
+  attr_accessor :type, :scheduled_date, :scheduled_time, :duration, :day_of_week, :horse_id, :trainer_id
   def initialize options
     @id = options['id'].to_s if options['id']
     @type = options['type']
@@ -38,5 +39,13 @@ class Training
     values = [id]
     result = SqlRunner.run(sql, values).first
     return Training.new(result)
+  end
+
+  def update()
+    sql = "UPDATE trainings
+    SET (type, scheduled_time, scheduled_date, duration, day_of_week, horse_id, trainer_id) = ($1, $2, $3, $4, $5, $6, $7)
+    WHERE id = $8;"
+    values = [@type, @scheduled_time, @scheduled_date, @duration, @day_of_week, @horse_id, @trainer_id, @id]
+    SqlRunner.run(sql, values)
   end
 end
