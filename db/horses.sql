@@ -1,0 +1,26 @@
+DROP TABLE IF EXISTS trainings;
+DROP TABLE IF EXISTS horses;
+DROP TABLE IF EXISTS trainers;
+
+CREATE TABLE trainers (
+  id SERIAL4 PRIMARY KEY,
+  first_name VARCHAR(255) NOT NULL,
+  last_name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE horses (
+  id SERIAL4 PRIMARY KEY,
+  name VARCHAR(255),
+  breed VARCHAR(255),
+  health_details TEXT,
+  current_activity VARCHAR(255)
+);
+
+CREATE TABLE trainings (
+  id SERIAL4 PRIMARY KEY,
+  type VARCHAR(255),
+  scheduled_time VARCHAR(255),
+  duration INT2,
+  horse_id INT4 REFERENCES horses(id) ON DELETE CASCADE,
+  trainer_id INT4 REFERENCES trainers(id) ON DELETE CASCADE
+);
