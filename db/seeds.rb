@@ -16,3 +16,5 @@ training2 = Training.new({'horse_id' => horse1.id, 'type' => 'Show jumping', 'da
 
 horse1.name = "Murat"
 horse1.update
+trainer1.first_name = "John"
+trainer1.update
