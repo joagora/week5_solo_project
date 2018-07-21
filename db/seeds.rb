@@ -4,9 +4,11 @@ require_relative('../models/training')
 
 horse1 = Horse.new({'name' => 'Magnateria', 'breed' => 'Arabian'})
 horse1.save
-
+horse2 = Horse.new({'name' => 'Paris', 'breed' => 'Malopolski'})
+horse2.save
 trainer1 = Trainer.new({'first_name' => 'Jack', 'last_name' => 'Johnson'})
 trainer1.save
 
 training1 = Training.new({'horse_id' => horse1.id, 'type' => 'Dressage', 'date' => '25/04/18', 'trainer_id' => trainer1.id, 'day_of_week' => 'Monday', 'duration' => 1})
 training1.save
+p Horse.all

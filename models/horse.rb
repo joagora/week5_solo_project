@@ -25,4 +25,10 @@ class Horse
     @id = results.first()['id'].to_i
   end
 
+  def self.all()
+    sql = "SELECT * FROM horses"
+    results = SqlRunner.run( sql )
+    return results.map { |horse| Horse.new( horse ) }
+  end
+
 end
