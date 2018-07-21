@@ -25,4 +25,10 @@ class Training
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
+
+  def self.all()
+    sql = "SELECT * FROM trainings"
+    results = SqlRunner.run(sql)
+    return results.map {|training| Training.new(training)}
+  end
 end
