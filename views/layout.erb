@@ -3,13 +3,15 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
     <title>Equilibrium</title>
   </head>
   <body>
     <div id="home_page">
       <nav>
         <ul>
-          <li><a>HOME</a></li>
+          <li id="logo"></li>
+          <li><a>LOGIN</a></li>
           <li><a>MANAGEMENT</a>
             <ul class="drop-down">
               <li><a href="/horses">HORSES</a></li>
@@ -17,8 +19,14 @@
             </ul>
           </li>
           <li><a>OWNER</a></li>
+
+
         </ul>
       </nav>
     <%=yield%>
+  <footer>
+    <p>Horse icon made by Freepik from www.flaticon.com</p>
+  </footer>
   </body>
+
 </html>

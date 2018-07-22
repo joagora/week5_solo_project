@@ -6,10 +6,10 @@ class Training
     @type = options['type']
     @scheduled_time = options['scheduled_time']
     @scheduled_date = options['scheduled_date']
-    @duration = options['duration'].to_s if options['duration']
+    @duration = options['duration'].to_i if options['duration']
     @day_of_week = options['day_of_week']
-    @horse_id = options['horse_id'].to_s if options['horse_id']
-    @trainer_id = options['trainer_id'].to_s if options['trainer_id']
+    @horse_id = options['horse_id'].to_i if options['horse_id']
+    @trainer_id = options['trainer_id'].to_i if options['trainer_id']
   end
 
   def save()
