@@ -33,3 +33,4 @@ p Owner.all
 p Owner.find(1)
 owner1.first_name = "Maria"
 owner1.update
+owner1.delete
