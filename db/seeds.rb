@@ -29,3 +29,4 @@ training3.save
 owner1 = Owner.new({'first_name' => 'Joanna', 'last_name' => 'Gora'})
 owner1.save
 p horse2.trainings
+p Owner.all
