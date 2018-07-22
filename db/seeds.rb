@@ -1,6 +1,7 @@
 require_relative('../models/horse')
 require_relative('../models/trainer')
 require_relative('../models/training')
+require_relative('../models/owner')
 
 horse1 = Horse.new({'name' => 'Magnateria', 'breed' => 'Arabian'})
 horse1.save
@@ -25,5 +26,6 @@ training3 = Training.new({'horse_id' => horse2.id, 'type' => 'Show jumping', 'da
 training3.save
 training3 = Training.new({'horse_id' => horse2.id, 'type' => 'Dressage', 'date' => '25/04/18', 'trainer_id' => trainer1.id, 'day_of_week' => 'Wednesday', 'duration' => 1})
 training3.save
-
+owner1 = Owner.new({'first_name' => 'Joanna', 'last_name' => 'Gora'})
+owner1.save
 p horse2.trainings
