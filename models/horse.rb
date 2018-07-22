@@ -50,4 +50,12 @@ class Horse
     SqlRunner.run(sql, values)
   end
 
+  def trainings()
+    sql = "SELECT trainings.* FROM trainings WHERE trainings.horse_id = $1;"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    trainings = results.map {|training| Training.new(training)}
+    return trainings
+  end
+
 end
