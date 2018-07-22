@@ -51,7 +51,7 @@ ul li {
   display: none;
 }
 
-li a {
+a {
   text-align: center;
   text-decoration: none;
   color: white;
@@ -86,6 +86,24 @@ li a {
 #management {
   grid-area: 2 / 2 / 3 / 3;
 }
+
+.get-started {
+  width: 150px;
+  height: 40px;
+  background-color: white;
+  border: 2px solid white;
+  border-radius: 30px;
+  margin-top: 10px;
+
+
+}
+
+.get-started a {
+  color: black;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+
 @media (max-width: 750px) {
   body {
     font-size: 12pt;
