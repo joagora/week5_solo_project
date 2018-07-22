@@ -1,5 +1,6 @@
 require_relative('../db/sql_runner')
 class Owner
+  attr_accessor :first_name, :last_name
   def initialize options
     @id = options['id'].to_i if options['id']
     @first_name = options['first_name']
@@ -33,6 +34,14 @@ class Owner
     values = [id]
     result = SqlRunner.run(sql, values).first
     return Owner.new(result)
+  end
+
+  def update()
+    sql = "UPDATE owners
+    SET (first_name, last_name) = ($1, $2)
+    WHERE id = $3;"
+    values = [@first_name, @last_name, @id]
+    SqlRunner.run(sql, values)
   end
 
 
