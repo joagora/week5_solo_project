@@ -14,9 +14,21 @@ class TestOwner < MiniTest::Test
     @owner4.save
   end
 
-  def test_filter_username
-    expected = @owner1
-    actual = Owner.filter_by_username('joagora')
+  # def test_filter_username
+  #   expected = @owner1
+  #   actual = Owner.filter_by_username('joagora')
+  #   assert_equal(expected, actual)
+  # end
+
+  def test_username_exists
+    expected = true
+    actual = Owner.check_if_exists?("joagora")
+    assert_equal(expected, actual)
+  end
+
+  def test_username_exists__false
+    expected = false
+    actual = Owner.check_if_exists?("joahaha")
     assert_equal(expected, actual)
   end
 end
