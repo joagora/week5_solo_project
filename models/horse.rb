@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require_relative('owner')
 class Horse
 
   attr_reader :id, :breed
@@ -61,5 +62,7 @@ class Horse
     return trainings
   end
 
-
+  def owner()
+    return Owner.find(@owner_id)
+  end
 end
