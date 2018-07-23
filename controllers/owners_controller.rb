@@ -19,6 +19,17 @@ post '/owners' do
   erb :"owners/create"
 end
 
+post '/owners/login' do
+  username = params['username']
+  @found_owner = Owner.filter_by_username(username)
+  redirect to "owners/#{@found_owner.id}"
+end
+
+get '/owners/login' do
+  erb :login
+end
+
+
 get '/owners/:id' do
   @owner = Owner.find(params['id'])
   erb :"owners/show"
