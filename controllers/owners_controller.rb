@@ -24,7 +24,7 @@ get '/owners/:id' do
   erb :"owners/show"
 end
 
-get '/owners/:id/horses_list' do
+get '/owners/:id/horses' do
   owner = Owner.find(params['id'])
   @horses_by_owner = owner.horses
   erb :"owners/horses_index"
