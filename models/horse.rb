@@ -10,14 +10,15 @@ class Horse
     @health_details = options['health_details']
     @current_activity = options['current_activity']
     @owner_id = options['owner_id']
+    @approved = options['approved']
   end
 
   def save()
     sql = "INSERT INTO horses
-    (name, breed, health_details, current_activity, owner_id)
-    VALUES ($1, $2, $3, $4, $5)
+    (name, breed, health_details, current_activity, owner_id, approved)
+    VALUES ($1, $2, $3, $4, $5, $6)
     RETURNING id;"
-    values = [@name, @breed, @health_details, @current_activity, @owner_id]
+    values = [@name, @breed, @health_details, @current_activity, @owner_id, @approved]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -38,9 +39,9 @@ class Horse
 
   def update()
     sql = "UPDATE horses
-    SET (name, breed, health_details, current_activity, owner_id) = ($1, $2, $3, $4, $5)
-    WHERE id = $6;"
-    values = [@name, @breed, @health_details, @current_activity, @owner_id, @id]
+    SET (name, breed, health_details, current_activity, owner_id, approved) = ($1, $2, $3, $4, $5, $6)
+    WHERE id = $7;"
+    values = [@name, @breed, @health_details, @current_activity, @owner_id, @approved, @id]
     SqlRunner.run(sql, values)
   end
 

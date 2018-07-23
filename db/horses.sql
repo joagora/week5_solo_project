@@ -21,7 +21,9 @@ CREATE TABLE horses (
   breed VARCHAR(255),
   health_details TEXT,
   current_activity VARCHAR(255),
+  approved BOOLEAN,
   owner_id INT4 REFERENCES owners(id)
+
 );
 
 CREATE TABLE trainings (
