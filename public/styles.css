@@ -137,9 +137,12 @@ h1, p {
   height: 100px;
 }
 /* registration form */
+input {
+  display: block;
+}
 
 .content-container {
-  width: 500px;
+  max-width: 400px;
   margin: auto;
 }
 .registration {
@@ -200,6 +203,31 @@ h1, p {
   padding-top: 40%;;
   width: 100%;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.log-in-button {
+  font-size: 1em;
+  background-color: #4CAF50;
+  border-radius: 30px;
+  color: white;
+  padding: 15px 32px 15px 32px;
+  text-decoration: none;
+  margin: 4px 4px;
+  cursor: pointer;
+}
+
+.button {
+  width: 150px;
+  background-color: rgb(55,88,89)
 }
 
 #logo_space {
@@ -207,11 +235,13 @@ h1, p {
   height: 100%;
 }
 
+
+.horse-list {
+
+}
 footer {
   width: 100%;
   clear: both;
-
-
 }
 
 footer p {
