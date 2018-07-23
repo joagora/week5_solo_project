@@ -1,8 +1,8 @@
 require_relative('../db/sql_runner')
 class Horse
 
-  attr_reader :id
-  attr_accessor :name, :health_details
+  attr_reader :id, :breed
+  attr_accessor :name, :health_details, :current_activity
   def initialize options
     @id = options['id'].to_s if options['id']
     @name = options['name'].capitalize
@@ -10,7 +10,7 @@ class Horse
     @health_details = options['health_details']
     @current_activity = options['current_activity']
     @owner_id = options['owner_id']
-    @approved = options['approved']
+    @approved ||= false
   end
 
   def save()
