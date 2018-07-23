@@ -2,7 +2,7 @@ require_relative('../db/sql_runner')
 class Owner
   attr_reader :id
   attr_accessor :first_name, :last_name
-  
+
   def initialize options
     @id = options['id'].to_i if options['id']
     @first_name = options['first_name'].capitalize
@@ -53,5 +53,11 @@ class Owner
     SqlRunner.run(sql, values)
   end
 
-
+  def horses()
+    sql = "SELECT * FROM horses WHERE owner_id = $1;"
+    values = [@id]
+    result = SqlRunner.run(sql, values)
+    horses = result.map{|horse| Horse.new(horse)}
+    return horses
+  end
 end
