@@ -1,0 +1,12 @@
+<form class="registration" action="/horses" method="post">
+  <label for="name"></label>
+  <input type="text" name="name" placeholder="Name">
+  <label for="breed"></label>
+  <input type="text" name="breed" placeholder="Breed">
+  <label for="hair_coat"></label>
+  <input type="text" name="hair_coat" placeholder="Hair coat">
+  <label for="health_details">If your horse has any health-issues, specify it here:</label>
+  <input type="hidden" name="owner_id" value="<%=@owner.id%>">
+  <textarea name="health_details" rows="4" cols="80"></textarea>
+  <input type="submit" value="ADD HORSE">
+</form>

@@ -14,4 +14,8 @@ get '/horses/new' do
   erb :"horses/new"
 end
 
-# post 'horses/:owner_id'
+post '/horses' do
+  @horse = Horse.new(params)
+  @horse.save
+  erb :"horses/create"
+end
