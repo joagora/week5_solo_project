@@ -12,7 +12,8 @@ CREATE TABLE trainers (
 CREATE TABLE owners (
   id SERIAL4 PRIMARY KEY,
   first_name VARCHAR(255) NOT NULL,
-  last_name VARCHAR(255) NOT NULL
+  last_name VARCHAR(255) NOT NULL,
+  username VARCHAR(255)
 );
 
 CREATE TABLE horses (

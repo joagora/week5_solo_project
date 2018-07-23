@@ -4,7 +4,7 @@ require_relative('../models/training')
 require_relative('../models/owner')
 
 
-owner1 = Owner.new({'first_name' => 'Joanna', 'last_name' => 'Gora'})
+owner1 = Owner.new({'first_name' => 'Joanna', 'last_name' => 'Gora', 'username' => 'joagora'})
 owner1.save
 
 owner1.first_name = "Maria"
