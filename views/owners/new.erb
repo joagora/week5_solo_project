@@ -1,19 +1,22 @@
 <div class="content-container">
-  <form class = "registration" action = "/owners/validate" method = "post">
-      <div class="input-container">
-        <label for="username"></label>
-        <input class="input-field" id="username" type="text" name= "username" placeholder="Username">
-      </div>
-      <div class="input-container">
-        <label for="first-name"></label>
-        <input class="input-field" id="first-name" type="text" name= "first_name" placeholder="First name">
-      </div>
-      <div class="input-container">
-        <label for="last-name"></label>
-        <input class="input-field" id="last-name" type="text" name="last_name" placeholder="Last name">
-      </div>
-      <input class="register-button" type="submit" value="REGISTER">
-      <p>Or</p>
-      <a href="/owners/login">LOG IN</a>
-  </form>
+  <div class="form-container">
+    <form class = "registration" action = "/owners/validate" method = "post">
+        <div class="input-container">
+          <label for="username"></label>
+          <input class="input-field" id="username" type="text" name= "username" placeholder="Username" required="required">
+        </div>
+        <div class="input-container">
+          <label for="first-name"></label>
+          <input class="input-field" id="first-name" type="text" name= "first_name" placeholder="First name" required="required">
+        </div>
+        <div class="input-container">
+          <label for="last-name"></label>
+          <input class="input-field" id="last-name" type="text" name="last_name" placeholder="Last name" required="required">
+        </div>
+        <input class="register-button button" type="submit" value="REGISTER">
+        <p>Or</p>
+
+    </form>
+    <a href="/owners/login"><button class="log-in-button button">LOG IN</button></a>
+  </div>
 </div>
