@@ -22,8 +22,8 @@ CREATE TABLE horses (
   health_details TEXT,
   current_activity VARCHAR(255),
   approved BOOLEAN,
-  owner_id INT4 REFERENCES owners(id)
-
+  owner_id INT4 REFERENCES owners(id),
+  hair_coat VARCHAR(255)
 );
 
 CREATE TABLE trainings (
