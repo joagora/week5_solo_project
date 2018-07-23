@@ -69,4 +69,16 @@ class Owner
     owner = Owner.new(results.first)
     return owner
   end
+
+  def self.check_if_exists?(username)
+    sql = "SELECT * FROM owners WHERE owners.username = $1;"
+    values = [username]
+    results = SqlRunner.run(sql, values)
+    owners = results.map {|owner| Owner.new(owner)}
+    if owners.length > 0
+      return true
+    else
+      return false
+    end
+  end
 end
