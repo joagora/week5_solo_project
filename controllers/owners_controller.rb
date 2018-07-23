@@ -29,3 +29,14 @@ get '/owners/:id/horses' do
   @horses_by_owner = owner.horses
   erb :"owners/horses_index"
 end
+
+post '/owners/validate' do
+  username = params['username']
+  if Owner.check_if_exists?(username)
+    erb :"owners/validation_failed"
+  else
+    @owner = Owner.new(params)
+    @owner.save()
+    erb :"owners/create"
+  end
+end
