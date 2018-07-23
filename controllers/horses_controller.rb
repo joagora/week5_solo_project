@@ -34,5 +34,11 @@ end
 post '/horses/:id' do
   horse = Horse.new(params)
   horse.update()
-  redurect to "horses/#{params['id']}"
+  redirect to "horses/#{params['id']}"
+end
+
+post '/horses/:id/delete' do
+  @horse_to_remove = Horse.find(params['id'])
+  @horse_to_remove.delete
+  redirect to "horses"
 end
