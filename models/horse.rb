@@ -2,7 +2,7 @@ require_relative('../db/sql_runner')
 class Horse
 
   attr_reader :id, :breed
-  attr_accessor :name, :health_details, :current_activity
+  attr_accessor :name, :health_details, :current_activity, :hair_coat
   def initialize options
     @id = options['id'].to_s if options['id']
     @name = options['name'].capitalize
@@ -11,14 +11,15 @@ class Horse
     @current_activity = options['current_activity']
     @owner_id = options['owner_id']
     @approved ||= false
+    @hair_coat = options['hair_coat']
   end
 
   def save()
     sql = "INSERT INTO horses
-    (name, breed, health_details, current_activity, owner_id, approved)
-    VALUES ($1, $2, $3, $4, $5, $6)
+    (name, breed, health_details, current_activity, owner_id, approved, hair_coat)
+    VALUES ($1, $2, $3, $4, $5, $6, $7)
     RETURNING id;"
-    values = [@name, @breed, @health_details, @current_activity, @owner_id, @approved]
+    values = [@name, @breed, @health_details, @current_activity, @owner_id, @approved, @hair_coat]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -39,9 +40,9 @@ class Horse
 
   def update()
     sql = "UPDATE horses
-    SET (name, breed, health_details, current_activity, owner_id, approved) = ($1, $2, $3, $4, $5, $6)
-    WHERE id = $7;"
-    values = [@name, @breed, @health_details, @current_activity, @owner_id, @approved, @id]
+    SET (name, breed, health_details, current_activity, owner_id, approved, hair_coat) = ($1, $2, $3, $4, $5, $6, $7)
+    WHERE id = $8;"
+    values = [@name, @breed, @health_details, @current_activity, @owner_id, @approved, @hair_coat, @id]
     SqlRunner.run(sql, values)
   end
 
