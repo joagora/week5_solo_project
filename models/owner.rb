@@ -7,19 +7,20 @@ class Owner
     @id = options['id'].to_i if options['id']
     @first_name = options['first_name'].capitalize
     @last_name = options['last_name'].capitalize
+    @username = options['username']
   end
 
   def save()
     sql = "INSERT INTO owners
     (
-      first_name, last_name
+      first_name, last_name, username
     )
     VALUES
     (
-      $1, $2
+      $1, $2, $3
     )
     RETURNING id"
-    values = [@first_name, @last_name]
+    values = [@first_name, @last_name, @username]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -40,9 +41,9 @@ class Owner
 
   def update()
     sql = "UPDATE owners
-    SET (first_name, last_name) = ($1, $2)
-    WHERE id = $3;"
-    values = [@first_name, @last_name, @id]
+    SET (first_name, last_name, username) = ($1, $2, $3)
+    WHERE id = $4;"
+    values = [@first_name, @last_name, @username, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -59,5 +60,13 @@ class Owner
     result = SqlRunner.run(sql, values)
     horses = result.map{|horse| Horse.new(horse)}
     return horses
+  end
+
+  def self.filter_by_username(username)
+    sql = "SELECT * FROM owners WHERE owners.username = $1;"
+    values = [username]
+    results = SqlRunner.run(sql, values)
+    owner = Owner.new(results.first)
+    return owner
   end
 end
