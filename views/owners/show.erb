@@ -1,4 +1,8 @@
-<section class="profile">
-  <p><%=p @owner.first_name%></p>
-  <p><%=p @owner.last_name%></p>
-</section>
+<div class="content-container">
+  <section class="profile">
+    <p><%=@owner.first_name%></p>
+    <p><%=@owner.last_name%></p>
+    <p><a href="/horses">View your horses</a></p>
+    <p><a href="/horses/new">Add a new horse</a></p>
+  </section>
+</div>
