@@ -5,8 +5,8 @@ class Horse
   attr_accessor :name, :health_details
   def initialize options
     @id = options['id'].to_s if options['id']
-    @name = options['name']
-    @breed = options['breed']
+    @name = options['name'].capitalize
+    @breed = options['breed'].capitalize
     @health_details = options['health_details']
     @current_activity = options['current_activity']
     @owner_id = options['owner_id']
