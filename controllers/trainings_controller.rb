@@ -24,6 +24,8 @@ post '/trainings' do
 end
 
 get '/trainings/:id/edit' do
+  @week_days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+  @types = ["Dressage", "Show jumping", "Lunge", "Walker"]
   @trainers = Trainer.all
   @training = Training.find(params['id'])
   @training.update

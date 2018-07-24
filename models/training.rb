@@ -1,6 +1,7 @@
 require_relative('../db/sql_runner')
 require_relative('trainer')
 class Training
+  attr_reader :id
   attr_accessor :type, :scheduled_date, :scheduled_time, :duration, :day_of_week, :horse_id, :trainer_id
   def initialize options
     @id = options['id'].to_i if options['id']
@@ -35,11 +36,10 @@ class Training
   end
 
   def self.find(id)
-    sql = "SELECT * FROM trainings
-    WHERE id = $1"
+    sql = "SELECT * FROM trainings WHERE id = $1;"
     values = [id]
-    result = SqlRunner.run(sql, values).first
-    training = Training.new(result)
+    result = SqlRunner.run(sql, values)
+    training = Training.new(result.first)
     return training
   end
 
