@@ -3,7 +3,7 @@ class Trainer
   attr_reader :id
   attr_accessor :first_name, :last_name
   def initialize options
-    @id = options['id'].to_s if options['id']
+    @id = options['id'].to_i if options['id']
     @first_name = options['first_name']
     @last_name = options['last_name']
   end
@@ -50,5 +50,10 @@ class Trainer
     WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
+  end
+
+  def full_name
+    full_name = "#{@first_name} #{@last_name}"
+    return full_name
   end
 end
