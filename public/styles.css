@@ -230,11 +230,16 @@ input {
   background-color: rgb(55,88,89)
 }
 
-#logo_space {
+#logo {
   width: 100%;
   height: 100%;
+
 }
 
+#logo a {
+  float: left;
+  color: transparent;
+}
 
 .horse-list {
 
