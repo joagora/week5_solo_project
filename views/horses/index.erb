@@ -1,7 +1,7 @@
 <a href="/horses/new"><button class="add-button button">ADD HORSE</button></a>
-<section class="horse-list">
+<section class="horse-list list">
 <%for horse in @horses%>
-  <section class="horse">
+  <section class="horse item-section">
       <p>Name: <%=horse.name%></p>
       <p>Breed: <%=horse.breed%></p>
       <p>Hair coat <%=horse.hair_coat%></p>
