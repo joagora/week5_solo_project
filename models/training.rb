@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require_relative('trainer')
 class Training
   attr_accessor :type, :scheduled_date, :scheduled_time, :duration, :day_of_week, :horse_id, :trainer_id
   def initialize options
@@ -55,5 +56,20 @@ class Training
     WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
+  end
+
+  def trainer()
+    sql = "SELECT * FROM trainers WHERE trainers.id = $1;"
+    values = [@trainer_id]
+    result = SqlRunner.run(sql, values)
+    return Trainer.new(result.first)
+  end
+
+  def horse()
+    sql = "SELECT * FROM horses WHERE horses.id = $1;"
+    values = [@horse_id]
+    result = SqlRunner.run(sql, values)
+    horse = Horse.new(result.first)
+    return horse
   end
 end
