@@ -40,6 +40,11 @@ get '/owners/login' do
   erb :login
 end
 
+#notifying about non-existent user
+post '/owners/invalid_user' do
+  erb :"owners/invalid_user"
+end
+
 
 get '/owners/:id' do
   @owner = Owner.find(params['id'])
