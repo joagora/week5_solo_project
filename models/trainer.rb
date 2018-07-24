@@ -52,8 +52,16 @@ class Trainer
     SqlRunner.run(sql, values)
   end
 
-  def full_name
+  def full_name()
     full_name = "#{@first_name} #{@last_name}"
     return full_name
+  end
+
+  def horse()
+    sql = "SELECT * FROM horses WHERE id = $1;"
+    values = [@horse_id]
+    results = SqlRunner.run(sql, values)
+    horse = Horse.new(results.first)
+    return horse
   end
 end
