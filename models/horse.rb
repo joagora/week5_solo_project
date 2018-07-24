@@ -5,7 +5,7 @@ class Horse
   attr_reader :id, :breed
   attr_accessor :name, :health_details, :current_activity, :hair_coat
   def initialize options
-    @id = options['id'].to_s if options['id']
+    @id = options['id'].to_i if options['id']
     @name = options['name'].capitalize
     @breed = options['breed'].capitalize
     @health_details = options['health_details']
@@ -64,5 +64,16 @@ class Horse
 
   def owner()
     return Owner.find(@owner_id)
+  end
+
+  def self.find_by_name(name)
+    horses = Horse.all
+    horses_array = []
+    for horse in horses
+      if horse.name == name
+        horses_array.push(horse)
+      end
+    end
+    return horses_array
   end
 end
