@@ -19,6 +19,7 @@ nav {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.07));
   width: 100%;
   border-bottom: 1px solid white;
+  height: 40px;
 }
 
 nav ul {
@@ -244,6 +245,24 @@ input {
 .horse-list {
 
 }
+
+/* adding the admin index page */
+
+#admin-management {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+  margin-top: 60px;
+}
+
+.manage {
+  max-height: 200px;
+  min-height: 150px;
+  min-width: 200px;
+}
+
 footer {
   width: 100%;
   clear: both;
