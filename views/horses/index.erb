@@ -1,0 +1,15 @@
+<a href="/horses/new"><button class="add-button button">ADD HORSE</button></a>
+<section class="horse-list">
+<%for horse in @horses%>
+  <section class="horse">
+      <p>Name: <%=horse.name%></p>
+      <p>Breed: <%=horse.breed%></p>
+      <p>Hair coat <%=horse.hair_coat%></p>
+      <section class="action-buttons">
+        <a href="/horses/<%=horse.id%>/edit"><button class="edit-button button">EDIT</button></a>
+        <form class="delete-button" action="/horses/<%=horse.id%>/delete" method="post">
+          <input type="submit" name="delete" value="DELETE" class="button">
+        </form>
+      </section>
+  </section>
+<%end%>
