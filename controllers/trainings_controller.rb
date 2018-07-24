@@ -12,5 +12,12 @@ end
 #new
 get '/trainings/new' do
   @horse = Horse.find(params['horse_id'])
+  @trainers = Trainer.all
   erb :"trainings/new"
+end
+
+post '/trainings' do
+  @training = Training.new(params)
+  @training.save
+  erb :"trainings/create"
 end

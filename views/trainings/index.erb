@@ -1,1 +1,10 @@
-yolo
+<%for training in @trainings%>
+  <dl>
+
+    <dt>Time</dt>
+    <dd><%=training.scheduled_time%></dd>
+    <dt>Type</dt>
+    <dd><%=training.type%></dd>
+
+  </dl>
+<%end%>
