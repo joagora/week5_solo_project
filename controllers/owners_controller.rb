@@ -33,8 +33,13 @@ end
 
 post '/owners/login' do
   username = params['username']
-  @found_owner = Owner.filter_by_username(username)
-  redirect to "owners/#{@found_owner.id}"
+  if Owner.check_if_exists?(username)
+    @found_owner = Owner.filter_by_username(username)
+    redirect to "owners/#{@found_owner.id}"
+  else
+    redirect to "owners/invalid_user"
+  end
+
 end
 
 get '/owners/login' do
@@ -42,7 +47,7 @@ get '/owners/login' do
 end
 
 #notifying about non-existent user
-post '/owners/invalid_user' do
+get '/owners/invalid_user' do
   erb :"owners/invalid_user"
 end
 
