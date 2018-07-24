@@ -30,9 +30,9 @@ CREATE TABLE horses (
 CREATE TABLE trainings (
   id SERIAL4 PRIMARY KEY,
   type VARCHAR(255),
-  scheduled_time VARCHAR(255),
+  scheduled_time TIME,
   duration INT2,
-  scheduled_date VARCHAR(255),
+  scheduled_date DATE,
   day_of_week VARCHAR(255),
   horse_id INT4 REFERENCES horses(id) ON DELETE CASCADE,
   trainer_id INT4 REFERENCES trainers(id) ON DELETE CASCADE

@@ -16,7 +16,7 @@ horse2 = Horse.new({'name' => 'Paris', 'breed' => 'Malopolski', 'owner_id' => ow
 horse2.save
 horse1.name = "Murat"
 horse1.update
-p owner1.horses
+
 
 trainer1 = Trainer.new({'first_name' => 'Jack', 'last_name' => 'Johnson'})
 trainer1.save
@@ -37,3 +37,5 @@ training3 = Training.new({'horse_id' => horse2.id, 'type' => 'Show jumping', 'da
 training3.save
 training3 = Training.new({'horse_id' => horse2.id, 'type' => 'Dressage', 'date' => '25/04/18', 'trainer_id' => trainer1.id, 'day_of_week' => 'Wednesday', 'duration' => 1})
 training3.save
+
+p training1.trainer
