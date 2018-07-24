@@ -1,6 +1,7 @@
 require('sinatra')
 require('sinatra/contrib/all')
 require_relative('../models/training')
+require_relative('../models/trainer')
 also_reload('./models/*')
 
 
@@ -20,4 +21,11 @@ post '/trainings' do
   @training = Training.new(params)
   @training.save
   erb :"trainings/create"
+end
+
+get '/trainings/:id/edit' do
+  @trainers = Trainer.all
+  @training = Training.find(params['id'])
+  @training.update
+  erb :"trainings/edit"
 end
