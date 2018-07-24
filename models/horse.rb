@@ -76,4 +76,10 @@ class Horse
     end
     return horses_array
   end
+  def self.show_pending_approval
+    sql = "SELECT * FROM horses WHERE approved = TRUE;"
+    results = SqlRunner.run(sql)
+    horses = results.map {|horse| Horse.new(horse)}
+    return horses
+  end
 end
