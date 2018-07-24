@@ -5,6 +5,10 @@
     <dd><%=training.scheduled_time%></dd>
     <dt>Type</dt>
     <dd><%=training.type%></dd>
-
+    <dt>Trainer</dt>
+    <dd><%=training.trainer.full_name%></dd>
+    <dt>Horse</dt>
+    <dd><%=training.horse.name%></dd>
   </dl>
+  <a href="/trainings/<%=training.id%>/edit"><button>Edit training</button></a>
 <%end%>
