@@ -1,1 +1,14 @@
-<h1><%=@horse.name%></h1>
+<dl>
+
+
+</dl>
+  <p>Name: <%=@horse.name%></p>
+  <p>Breed: <%=@horse.breed%></p>
+  <p>Hair coat <%=@horse.hair_coat%></p>
+<section class="action-buttons">
+
+  <a href="/trainings/new?horse_id=<%=@horse.id()%>"><button>Add training</button></a>
+  <form class="delete-button" action="/horses/<%=@horse.id%>/delete" method="post">
+    <input type="submit" name="delete" value="DELETE" class="button">
+  </form>
+</section>
