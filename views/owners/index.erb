@@ -5,11 +5,11 @@
       <p>Surname: <%=owner.last_name%></p>
       <p>Username <%=owner.username%></p>
       <section class="action-buttons">
-        <form class="delete-button" action="/owners/<%=owner.id%>/delete" method="post">
+        <form class="delete-button button" action="/owners/<%=owner.id%>/delete" method="post">
           <input type="submit" name="delete" value="DELETE" class="button">
         </form>
-        <a href="/owners/<%=owner.id%>/horses"><button>View horses</button></a>
+        <a href="/owners/<%=owner.id%>/horses"><button class="more-button button">View horses</button></a>
       </section>
   </section>
 <%end%>
-<a href="/admin"><button>Go back</button></a>
+<a href="/admin"><button class="more-button button">Go back</button></a>

@@ -2,7 +2,7 @@
   <section class="profile">
     <p><%=@owner.first_name%></p>
     <p><%=@owner.last_name%></p>
-    <a href="/owners/<%=@owner.id%>/horses"><button>View your horses</button></a>
+    <a href="/owners/<%=@owner.id%>/horses"><button class="more-button button">View your horses</button></a>
     <a href="/horses/new?owner_id=<%=@owner.id()%>"><button class="add-button button">Add a horse</button></a>
   </section>
 </div>

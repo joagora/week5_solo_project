@@ -6,8 +6,8 @@
       <p>Last name: <%=trainer.last_name%></p>
       <section class="action-buttons">
         <a href="/trainers/<%=trainer.id%>/edit"><button class="edit-button button">EDIT</button></a>
-        <form class="delete-button" action="/trainers/<%=trainer.id%>/delete" method="post">
-          <input type="submit" name="delete" value="DELETE" class="button">
+        <form action="/trainers/<%=trainer.id%>/delete" method="post">
+          <input type="submit" name="delete" value="DELETE" class="delete-button button">
         </form>
       </section>
   </section>
