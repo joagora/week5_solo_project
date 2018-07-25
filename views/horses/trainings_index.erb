@@ -1,0 +1,10 @@
+<%for training in @trainings%>
+  <dl>
+    <dt>Day</dt>
+    <dd><%=training.day_of_week%>
+    <dt>Type</dt>
+    <dd><%=training.type%>
+    <dt>Trainer</dt>
+    <dd><%=training.trainer.full_name%>
+  </dl>
+<%end%>

@@ -1,6 +1,8 @@
-<%for training in @trainings%>
-  <dl>
 
+
+<%for training in @trainings%>
+
+  <dl>
     <dt>Time</dt>
     <dd><%=training.scheduled_time%></dd>
     <dt>Type</dt>
@@ -8,7 +10,7 @@
     <dt>Trainer</dt>
     <dd><%=training.trainer.full_name%></dd>
     <dt>Horse</dt>
-    <dd><%=training.horse.name%></dd>
+    <dd><%=training.horse.id%></dd>
     <dt>Week day</dt>
     <dd><%=training.day_of_week%></dd>
   </dl>

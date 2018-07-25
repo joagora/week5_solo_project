@@ -55,3 +55,9 @@ post '/horses/:id/delete' do
   @horse_to_remove.delete
   redirect to "horses"
 end
+
+get '/horses/:id/trainings' do
+  @horse = Horse.find(params['id'])
+  @trainings = @horse.trainings
+  erb :"horses/trainings_index"
+end
