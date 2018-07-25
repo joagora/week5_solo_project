@@ -1,12 +1,22 @@
+
 <form class="registration" action="/horses" method="post">
   <label for="name"></label>
   <input type="text" name="name" required="required" placeholder="Name">
+
   <label for="breed"></label>
   <input type="text" name="breed" required="required" placeholder="Breed">
+
   <label for="hair_coat"></label>
   <input type="text" name="hair_coat" required="required" placeholder="Hair coat">
+
   <label for="health_details">If your horse has any health-issues, specify it here:</label>
   <textarea name="health_details" rows="4" cols="80"></textarea>
-  <input type="hidden" name="owner_id" value="<%=@owner.id%>">
+
+  <%if @owner == nil%>
+    <input type="text" name="owner_id">
+  <%else%>
+    <input type="hidden" name="owner_id" value="<%=@owner.id%>">
+  <%end%>
   <input type="submit" value="Add horse">
+
 </form>
