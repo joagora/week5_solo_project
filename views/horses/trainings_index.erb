@@ -6,5 +6,9 @@
     <dd><%=training.type%>
     <dt>Trainer</dt>
     <dd><%=training.trainer.full_name%>
+    <dt>Date</dt>
+    <dd><%=training.scheduled_date%>
+    <dt>Time</dt>
+    <dd><%=training.format_time(training.scheduled_time)%>
   </dl>
 <%end%>
