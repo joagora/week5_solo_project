@@ -3,7 +3,7 @@ require_relative('owner')
 class Horse
 
   attr_reader :id, :breed
-  attr_accessor :name, :health_details, :current_activity, :hair_coat
+  attr_accessor :name, :health_details, :current_activity, :hair_coat, :approved
   def initialize options
     @id = options['id'].to_i if options['id']
     @name = options['name'].capitalize
@@ -44,7 +44,7 @@ class Horse
     SET (name, breed, health_details, current_activity, owner_id, approved, hair_coat) = ($1, $2, $3, $4, $5, $6, $7)
     WHERE id = $8;"
     values = [@name, @breed, @health_details, @current_activity, @owner_id, @approved, @hair_coat, @id]
-    SqlRunner.run(sql, values)
+    results = SqlRunner.run(sql, values)
   end
 
   def delete()
@@ -77,9 +77,20 @@ class Horse
     return horses_array
   end
   def self.show_pending_approval
+    sql = "SELECT * FROM horses WHERE approved = FALSE;"
+    results = SqlRunner.run(sql)
+    horses = results.map {|horse| Horse.new(horse)}
+    return horses
+  end
+
+  def self.show_approved
     sql = "SELECT * FROM horses WHERE approved = TRUE;"
     results = SqlRunner.run(sql)
     horses = results.map {|horse| Horse.new(horse)}
     return horses
+  end
+
+  def approve
+    @approved = true
   end
 end

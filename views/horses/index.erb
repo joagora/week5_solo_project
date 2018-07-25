@@ -1,17 +1,45 @@
-<a href="/horses/new"><button class="add-button button">ADD HORSE</button></a>
+<a href="/horses/new"><button class="add-button button">Add horse</button></a>
+
+
+
+
+
 <section class="horse-list list">
-<%for horse in @horses%>
-  <section class="horse item-section">
-      <p>Name: <%=horse.name%></p>
-      <p>Breed: <%=horse.breed%></p>
-      <p>Hair coat <%=horse.hair_coat%></p>
-      <section class="action-buttons">
-        <a href="/horses/<%=horse.id%>/edit"><button class="edit-button button">EDIT</button></a>
-        <form class="delete-button" action="/horses/<%=horse.id%>/delete" method="post">
-          <input type="submit" name="delete" value="DELETE" class="button">
-        </form>
-      </section>
-      <a href="/trainings/new?horse_id=<%=horse.id()%>"><button>Add training</button></a>
+    <%for horse in @horses_pending%>
+      <section class="horse item-section">
+          <p>Name: <%=horse.name%></p>
+          <p>Breed: <%=horse.breed%></p>
+          <p>Hair coat <%=horse.hair_coat%></p>
+          <section class="action-buttons">
+
+            <form class="delete-button" action="/horses/<%=horse.id%>/delete" method="post">
+              <input type="submit" name="delete" value="DELETE" class="button">
+            </form>
+
+            <form class="approve" action="/horses/<%=horse.id%>/approve" method="post">
+              <input type="submit" name="approved" value="Approve">
+            </form>
+
+          </section>
+
+    <%end%>
   </section>
-<%end%>
+  <section>
+    <%for horse in @approved_horses%>
+      <section class="horse item-section">
+        <p>Name: <%=horse.name%></p>
+        <p>Breed: <%=horse.breed%></p>
+        <p>Hair coat <%=horse.hair_coat%></p>
+        <section class="action-buttons">
+          <a href="/horses/<%=horse.id%>/edit"><button class="edit-button button">EDIT</button></a>
+          <form class="delete-button" action="/horses/<%=horse.id%>/delete" method="post">
+            <input type="submit" name="delete" value="DELETE" class="button">
+          </form>
+        </section>
+        <a href="/trainings/new?horse_id=<%=horse.id()%>"><button>Add training</button></a>
+
+    <%end%>
+  </section>
+
   <a href="/admin"><button>Go back</button></a>
+</section>

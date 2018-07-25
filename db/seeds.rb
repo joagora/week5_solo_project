@@ -39,4 +39,5 @@ training3 = Training.new({'horse_id' => horse2.id, 'type' => 'Dressage', 'date' 
 training3.save
 
 
-p Horse.show_pending_approval
+
+p horse1.approve

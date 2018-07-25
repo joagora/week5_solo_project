@@ -5,6 +5,8 @@ also_reload('./models/*')
 
 get '/horses' do
   @horses = Horse.all
+  @horses_pending = Horse.show_pending_approval
+  @approved_horses = Horse.show_approved
   erb :"horses/index"
 end
 
@@ -21,20 +23,33 @@ end
 #create
 post '/horses' do
   @horse = Horse.new(params)
-  @horse.save()
-  @owner = @horse.owner()
+  @horse.save
+  @owner = @horse.owner
   erb :"horses/create"
 end
 
+#edit
 get '/horses/:id/edit' do
   @horse = Horse.find(params['id'])
   erb :"horses/edit"
 end
 
+
+
+#update
 post '/horses/:id' do
+  p params
   horse = Horse.new(params)
-  horse.update()
+  horse.update
   redirect to "horses/#{params['id']}"
+end
+
+#approve
+post '/horses/:id/approve' do
+  @horse = Horse.find(params['id'])
+  @horse.approve
+  @horse.update
+  redirect to "horses"
 end
 
 post '/horses/:id/delete' do

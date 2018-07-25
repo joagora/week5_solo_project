@@ -11,6 +11,8 @@ body {
 
 /* navigation */
 nav {
+  position: relative;
+  top: 0;
   z-index: 20;
   padding: 1% 0;
   color: white;
@@ -72,6 +74,11 @@ li a {
   top: 0;
 }
 
+#home-content {
+  position: absolute;
+  top: 0;
+}
+
 #home-container {
   width: 60%;
   height: 100%;
@@ -81,6 +88,7 @@ li a {
   grid-template-rows: 70% 30%;
   text-align: center;
   color: white;
+
 }
 
 #welcome-container {
