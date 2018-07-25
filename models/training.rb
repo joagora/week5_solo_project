@@ -72,4 +72,8 @@ class Training
     horse = Horse.new(result.first)
     return horse
   end
+
+  def format_time(time)
+    time.chomp[0...-3]
+  end
 end
