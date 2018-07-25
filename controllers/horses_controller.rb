@@ -1,6 +1,7 @@
 require('sinatra')
 require('sinatra/contrib/all')
 require_relative('../models/horse')
+
 also_reload('./models/*')
 
 get '/horses' do
@@ -11,7 +12,7 @@ get '/horses' do
 end
 
 get '/horses/new' do
-  @owner = Owner.find(params['owner_id'])
+  @owner = Owner.find(params['owner_id']) if params['owner_id']
   erb :"horses/new"
 end
 
@@ -34,11 +35,8 @@ get '/horses/:id/edit' do
   erb :"horses/edit"
 end
 
-
-
 #update
 post '/horses/:id' do
-  p params
   horse = Horse.new(params)
   horse.update
   redirect to "horses/#{params['id']}"
