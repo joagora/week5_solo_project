@@ -1,13 +1,15 @@
 require_relative('../db/sql_runner')
+require('pry-byebug')
 class Owner
   attr_reader :id, :username
   attr_accessor :first_name, :last_name
 
-  def initialize options
+  def initialize(options)
     @id = options['id'].to_i if options['id']
     @first_name = options['first_name'].capitalize if options['first_name']
     @last_name = options['last_name'].capitalize if options['last_name']
     @username = options['username']
+
   end
 
   def save()
@@ -32,11 +34,13 @@ class Owner
   end
 
   def self.find(id)
+
     sql = "SELECT * FROM owners
     WHERE id = $1"
     values = [id]
     result = SqlRunner.run(sql, values).first
-    return Owner.new(result)
+    owner = Owner.new(result)
+    return owner
   end
 
   def update()

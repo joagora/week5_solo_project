@@ -1,5 +1,6 @@
 require_relative('../db/sql_runner')
 require_relative('owner')
+
 class Horse
 
   attr_reader :id, :breed
@@ -10,7 +11,7 @@ class Horse
     @breed = options['breed'].capitalize if options['breed']
     @health_details = options['health_details']
     @current_activity = options['current_activity']
-    @owner_id = options['owner_id'].to_i if options['id']
+    @owner_id = options['owner_id'].to_i if options['owner_id']
     @hair_coat = options['hair_coat']
     @approved ||= false
 

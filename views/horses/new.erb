@@ -12,11 +12,8 @@
   <label for="health_details">If your horse has any health-issues, specify it here:</label>
   <textarea name="health_details" rows="4" cols="80"></textarea>
 
-  <%if @owner == nil%>
-    <input type="text" name="owner_id">
-  <%else%>
     <input type="hidden" name="owner_id" value="<%=@owner.id%>">
-  <%end%>
+
     <input class="add-button button" type="submit" value="Add horse">
 
 </form>

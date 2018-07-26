@@ -1,6 +1,9 @@
 require('sinatra')
 require('sinatra/contrib/all')
 require_relative('../models/horse')
+require_relative('../models/owner')
+require('pry-byebug')
+
 
 also_reload('./models/*')
 
@@ -12,8 +15,7 @@ get '/horses' do
 end
 
 get '/horses/new' do
-  @owners = Owner.all
-  @owner = Owner.find(params['owner_id']) if params['owner_id']
+  @owner = Owner.find(params['owner_id'])
   erb :"horses/new"
 end
 

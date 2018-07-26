@@ -12,4 +12,5 @@ class DateTime
   def time_now
     return Time.now
   end
+  
 end
