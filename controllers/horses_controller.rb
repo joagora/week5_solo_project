@@ -34,7 +34,9 @@ end
 
 #edit
 get '/horses/:id/edit' do
+
   @horse = Horse.find(params['id'])
+  @owner = @horse.owner
   erb :"horses/edit"
 end
 
@@ -74,5 +76,5 @@ post '/horses/:id' do
 
   horse = Horse.new(params)
   horse.update
-  redirect to "horses/#{params['id']}"
+  redirect to "horses"
 end

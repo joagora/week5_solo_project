@@ -8,6 +8,7 @@
   <input class="input-field" placeholder="Hair coat" type="text" name="hair_coat" value="<%=@horse.hair_coat%>">
   <label class="health-label" for="health_details">If your horse has any health-issues, specify it here:</label>
   <textarea name="health_details" rows="4" cols="80" value="<%=@horse.health_details%>"></textarea>
+  <input type="hidden" name="owner_id" value="<%=@owner.id%>">
   <input class="edit-button button" type="submit" value="Edit">
 </form>
 </main>
