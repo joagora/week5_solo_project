@@ -2,9 +2,19 @@
   <section class="horse-list list">
     <%for horse in @horses_by_owner%>
     <section class="horse item-section">
-      <p>Name: <%=horse.name%></p>
-      <p>Breed: <%=horse.breed%></p>
-      <p>Hair coat <%=horse.hair_coat%></p>
+      <dl>
+        <dt>Name:</dt>
+        <dd><%=horse.name%></dd>
+        <dt>Breed:</dt>
+        <dd><%=horse.breed%></dd>
+        <dt>Hair coat:</dt>
+        <dd><%=horse.hair_coat%></dd>
+
+        <%if horse.current_activity%>
+          <dt>Current activity:</dt>
+          <dd><%=horse.current_activity%></dd>
+        <%end%>
+      </dl>
       <a href="/horses/<%=horse.id%>/edit"><button class="edit-button button">EDIT</button></a>
     </section>
     <%end%>

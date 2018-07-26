@@ -1,25 +1,27 @@
-<form class="change_status" action="/horses/<%=@horse.id%>/change_status" method="post">
-  <select class="status" name="current_activity">
-      <option value="In training">In training</option>
-      <option value="On paddock">On paddock</option>
-      <option value="In box">In box</option>
-      <option value="Vet visit">Vet visit</option>
-      <option value="Horse-smith">Horse-smith</option>
-      <option value="Competition">Competition</option>
-      <option value="Other">Other</option>
-  </select>
+<main class="content-container">
+  <form class="registration" action="/horses/<%=@horse.id%>/change_status" method="post">
+    <select class="input-field" name="current_activity">
+        <option value="In training">In training</option>
+        <option value="On paddock">On paddock</option>
+        <option value="In box">In box</option>
+        <option value="Vet visit">Vet visit</option>
+        <option value="Horse-smith">Horse-smith</option>
+        <option value="Competition">Competition</option>
+        <option value="Other">Other</option>
+    </select>
 
-  <label for="name"></label>
-  <input type="hidden" name="name" value="<%=@horse.name%>">
-  <label for="breed"></label>
-  <input type="hidden" name="breed" value="<%=@horse.breed%>">
-  <label for="hair_coat"></label>
-  <input type="hidden" name="hair_coat" value="<%=@horse.hair_coat%>">
-  <input type="hidden" name="hair_coat" value="<%=@horse.hair_coat%>">
-  <textarea class="hide" name="health_details" rows="4" cols="80" value="<%=@horse.health_details%>"></textarea>
-  <input type="hidden" name="approved" value="TRUE">
-  <input type="hidden" name="owner_id" value="<%=@horse.owner_id%>">
-  <input type="submit" name="status" value="Bla">
+    <label for="name"></label>
+    <input type="hidden" name="name" value="<%=@horse.name%>">
+    <label for="breed"></label>
+    <input type="hidden" name="breed" value="<%=@horse.breed%>">
+    <label for="hair_coat"></label>
+    <input type="hidden" name="hair_coat" value="<%=@horse.hair_coat%>">
+    <input type="hidden" name="hair_coat" value="<%=@horse.hair_coat%>">
+    <textarea class="hide" name="health_details" rows="4" cols="80" value="<%=@horse.health_details%>"></textarea>
+    <input type="hidden" name="approved" value="TRUE">
+    <input type="hidden" name="owner_id" value="<%=@horse.owner_id%>">
+    <input class="button edit-button" type="submit" name="status" value="Change status">
 
 
-</form>
+  </form>
+</main>

@@ -1,9 +1,9 @@
-<%require('pry-byebug')%>
+
 <div class="content-container">
   <div class="form-container">
     <form class = "registration" action = "/trainings" method = "post">
         <div class="input-container">
-          <select class="selection" name="type" placeholder="Type of training" required="required">
+          <select class="input-field" name="type" placeholder="Type of training" required="required">
             <option value="dressage">Dressage</option>
             <option value="show jumping">Show jumping</option>
             <option value="lunge">Lunge</option>
@@ -11,22 +11,23 @@
           </select>
         </div>
 
-        <div "input-container">
-          <select required="required" class="selection" name="trainer_id" placeholder="Trainer">
+
+          <select required="required" class="input-field" name="trainer_id" placeholder="Trainer">
+            <%if @trainers.length == 0 %>
+              <option>No trainer available</option>
+              return
+            <%end%>
             <%for trainer in @trainers%>
               <option value="<%=trainer.id%>"><%=trainer.full_name%></option>
             <%end%>
           </select>
-        </div>
-        <div "input-container">
-          <input required="required" type="number" name="duration" placeholder="Duration">
-        </div>
-        <div "input-container">
-          <input required="required" type="date" name="scheduled_date" placeholder="Date">
-        </div>
-        <div "input-container">
-          <input require="required" type="time" name="scheduled_time" placeholder="Time">
-        </div>
+
+          <input class="input-field" required="required" type="number" name="duration" placeholder="Duration">
+
+          <input class="input-field" required="required" type="date" name="scheduled_date" placeholder="Date">
+
+          <input class="input-field" require="required" type="time" name="scheduled_time" placeholder="Time">
+
           <input type="hidden" name="horse_id" value="<%=@horse.id%>">
         <input class="log-in-button button" type="submit" value="Add training">
 
