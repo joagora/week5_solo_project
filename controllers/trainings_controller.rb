@@ -34,6 +34,7 @@ end
 
 #update
 post '/trainings/:id' do
+  training = Training.new(params)
   training.update
-  redirect to "trainings/#{params['id']}"
+  redirect to "trainings"
 end
