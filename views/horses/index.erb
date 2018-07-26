@@ -5,7 +5,7 @@
 
     <section class="horse item-section">
       <%if @horses_pending.length > 0%>
-      <table>
+      <table id="pending-horses">
         <th>Name</th>
         <th>Breed</th>
         <th>Hair coat</th>
@@ -20,10 +20,10 @@
           <td>
             <section class="action-buttons">
                   <form class="approve" action="/horses/<%=horse.id%>/approve" method="post">
-                    <input class="button more-button" type="submit" name="approved" value="Approve">
+                    <input class="button-small add-button" type="submit" name="approved" value="Approve">
                   </form>
                   <form action="/horses/<%=horse.id%>/delete" method="post">
-                    <input class="delete-button button" type="submit" name="delete" value="Delete" class="button">
+                    <input class="delete-button button-small" type="submit" name="delete" value="Delete" class="button">
                   </form>
                 </section>
               </td>

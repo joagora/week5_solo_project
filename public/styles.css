@@ -380,8 +380,8 @@ table {
   text-align: left;
 }
 
-.button-table-space {
-  width: 300px;
+#pending-horses {
+  padding-bottom: 50px;
 }
 
 #manage-horses {
