@@ -68,8 +68,8 @@ class Training
   def horse()
     sql = "SELECT * FROM horses WHERE horses.id = $1;"
     values = [@horse_id]
-    result = SqlRunner.run(sql, values)
-    horse = Horse.new(result.first)
+    result = SqlRunner.run(sql, values).first
+    horse = Horse.new(result)
     return horse
   end
 

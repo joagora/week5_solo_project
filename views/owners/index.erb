@@ -1,15 +1,17 @@
-<section class="owner-list list">
-<%for owner in @owners%>
-  <section class="owner item-section">
-      <p>Name: <%=owner.first_name%></p>
-      <p>Surname: <%=owner.last_name%></p>
-      <p>Username <%=owner.username%></p>
-      <section class="action-buttons">
-        <form action="/owners/<%=owner.id%>/delete" method="post">
-          <input type="submit" name="delete" value="Delete" class="button delete-button">
-        </form>
-        <a href="/owners/<%=owner.id%>/horses"><button class="more-button button">View horses</button></a>
-      </section>
-  </section>
-<%end%>
-<a href="/admin"><button class="more-button button">Go back</button></a>
+<main class="content-container">
+  <section class="owner-list list">
+  <%for owner in @owners%>
+    <section class="owner item-section">
+        <p>Name: <%=owner.first_name%></p>
+        <p>Surname: <%=owner.last_name%></p>
+        <p>Username <%=owner.username%></p>
+        <section class="action-buttons">
+          <form action="/owners/<%=owner.id%>/delete" method="post">
+            <input type="submit" name="delete" value="Delete" class="button delete-button">
+          </form>
+          <a href="/owners/<%=owner.id%>/horses"><button class="more-button button">View horses</button></a>
+        </section>
+    </section>
+  <%end%>
+  <a href="/admin"><button class="more-button button">Go back</button></a>
+</main>

@@ -17,3 +17,9 @@ post '/trainers' do
   @trainer.save
   erb :"trainers/create"
 end
+
+post '/trainers/:id/delete' do
+  @trainer_to_remove = Trainer.find(params['id'])
+  @trainer_to_remove.delete
+  redirect to "trainers"
+end
