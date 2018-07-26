@@ -13,7 +13,7 @@
 <tr>
   <td><%=training.type.capitalize%></td>
   <td><%=training.scheduled_date%></td>
-  <td><%=training.scheduled_time%></td>
+  <td><%=training.format_time(training.scheduled_time)%></td>
   <td><%=training.trainer.full_name%></td>
   <td><%=training.horse.name%></td>
   <td><%=training.day_of_week%></td>
