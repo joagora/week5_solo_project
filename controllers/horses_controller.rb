@@ -43,35 +43,11 @@ get '/horses/:id/change_status' do
   erb :"horses/change_status"
 end
 
-
-
-
-
-
-
-
-
-
-#new edited version update:
-
 post '/horses/:id/change_status' do
- p "-------------------------"
-p params
   @horse = Horse.new(params)
-  p "-------------------------"
-  p @horse
   @horse.update
   redirect to "horses"
 end
-
-
-
-
-
-
-
-
-
 
 #approve
 post '/horses/:id/approve' do

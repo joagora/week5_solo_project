@@ -193,7 +193,6 @@ input {
 .action-buttons {
   display: flex;
   justify-content: center;
-  width: 300px;
   float: right;
 }
 .registration {
@@ -265,9 +264,8 @@ textarea {
 }
 
 .form-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 100%;
+  margin: auto;
 }
 
 .log-in-button {
@@ -284,6 +282,14 @@ textarea {
   text-decoration: none;
   margin: 4px 4px;
   cursor: pointer;
+}
+
+.button-small:hover {
+  opacity: 0.9;
+}
+
+.button:hover {
+  opacity: 0.9;
 }
 
 .edit-button, .more-button {
@@ -378,6 +384,26 @@ textarea {
 table {
   width: 100%;
   text-align: left;
+  border-collapse: collapse;
+}
+
+tr:hover {
+  background-color: rgba(232, 232, 232)
+}
+
+.trainer-table {
+  width: 60%;
+  margin: auto;
+}
+
+.training-table {
+  width: 90%;
+  margin: auto;
+}
+
+.horses-table {
+  width: 90%;
+  margin: auto;
 }
 
 #pending-horses {

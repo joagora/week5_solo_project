@@ -1,22 +1,29 @@
-<div class="content-container">
-  <section class="horse-list list">
-    <%for horse in @horses_by_owner%>
-    <section class="horse item-section">
-      <dl>
-        <dt>Name:</dt>
-        <dd><%=horse.name%></dd>
-        <dt>Breed:</dt>
-        <dd><%=horse.breed%></dd>
-        <dt>Hair coat:</dt>
-        <dd><%=horse.hair_coat%></dd>
 
-        <%if horse.current_activity%>
-          <dt>Current activity:</dt>
-          <dd><%=horse.current_activity%></dd>
-        <%end%>
-      </dl>
-      <a href="/horses/<%=horse.id%>/edit"><button class="edit-button button">EDIT</button></a>
-    </section>
-    <%end%>
-  </end>
-</div>
+  <div class="form-container">
+
+    <div class="horses-table">
+
+
+        <table>
+          <th>Name</th>
+          <th>Breed</th>
+          <th>Hair coat</th>
+          <th>Current_activity</th>
+          <th></th>
+          <%for horse in @horses_by_owner%>
+          <tr>
+            <td><%=horse.name%></td>
+            <td><%=horse.breed%></td>
+            <td><%=horse.hair_coat%></td>
+            <td><%=horse.current_activity%></td>
+            <td>
+              <div class="action-buttons"><a href="/horses/<%=horse.id%>/edit"><button class="edit-button button">Edit</button></a></td>
+              </div>
+          </tr>
+          <%end%>
+        </table>
+
+
+    </div>
+
+  </div>

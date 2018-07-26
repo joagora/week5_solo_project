@@ -28,3 +28,11 @@ get '/trainers/:id/edit' do
   @trainer = Trainer.find(params['id'])
   erb :"trainers/edit"
 end
+
+
+###edited
+post '/trainers/:id' do
+  @trainer = Trainer.new(params)
+  @trainer.update
+  redirect to "horses/#{params['id']}"
+end

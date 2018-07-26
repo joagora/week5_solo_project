@@ -1,21 +1,29 @@
+<div class="training-table">
+<div class="form-container">
 
-<div class="content-container">
+  <table>
+    <th>Type</th>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Trainer</th>
+    <th>Horse</th>
+    <th>Day of week</th>
+
   <%for training in @sorted_trainings%>
-
-    <dl>
-      <dt>Time</dt>
-      <dd><%=training.scheduled_time%></dd>
-      <dt>Date</dt>
-      <dd><%=training.scheduled_date%></dd>
-      <dt>Type</dt>
-      <dd><%=training.type%></dd>
-      <dt>Trainer</dt>
-      <dd><%=training.trainer.full_name%></dd>
-      <dt>Horse</dt>
-      <dd><%=training.horse.name%></dd>
-      <dt>Week day</dt>
-      <dd><%=training.day_of_week%></dd>
-    </dl>
+<tr>
+  <td><%=training.type.capitalize%></td>
+  <td><%=training.scheduled_date%></td>
+  <td><%=training.scheduled_time%></td>
+  <td><%=training.trainer.full_name%></td>
+  <td><%=training.horse.name%></td>
+  <td><%=training.day_of_week%></td>
+  <td>
     <a href="/trainings/<%=training.id%>/edit"><button class="button edit-button">Edit</button></a>
+  </td>
+</tr>
+
+
   <%end%>
-</end>
+  </table>
+</div>
+</div>

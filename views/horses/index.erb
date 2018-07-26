@@ -1,7 +1,7 @@
 <div class="table-container">
 
 
-  <section class="horse-list list">
+  <div class="horses-table">
 
     <section class="horse item-section">
       <%if @horses_pending.length > 0%>
@@ -10,7 +10,7 @@
         <th>Breed</th>
         <th>Hair coat</th>
         <th>Owner</th>
-        <th></th>
+        <th>/th>
           <%for horse in @horses_pending%>
         <tr>
           <td><%=horse.name%></td>
@@ -66,5 +66,5 @@
 
 
       <a href="/admin"><button class="more-button button">Go back</button></a>
-    </section>
+    </div>
   </div>
