@@ -4,7 +4,7 @@ require_relative('../models/training')
 require_relative('../models/trainer')
 also_reload('./models/*')
 
-
+require('pry-byebug')
 
 get '/trainings' do
   #sorting the array of objects by date
@@ -29,6 +29,11 @@ get '/trainings/:id/edit' do
   @types = ["dressage", "show jumping", "lunge", "walker"]
   @trainers = Trainer.all
   @training = Training.find(params['id'])
-  @training.update
   erb :"trainings/edit"
+end
+
+#update
+post '/trainings/:id' do
+  training.update
+  redirect to "trainings/#{params['id']}"
 end
