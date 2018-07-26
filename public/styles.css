@@ -156,6 +156,16 @@ input {
 .content-container {
   max-width: 400px;
   margin: auto;
+  text-align: center;
+}
+
+.content {
+  padding-top: 40%;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
 }
 .registration {
   height: 200px;
@@ -283,44 +293,54 @@ input {
 }
 
 .manage {
-  max-height: 300px;
-  min-height: 250px;
+  height: 300px;
   min-width: 200px;
   max-width: 900px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 43%;
-
+  position: relative;
 }
 
+.manage:hover .overlay {
+  display: block;
+}
+
+
 .overlay {
+  overflow: hidden;
   display: none;
   background-color: rgba(39,62,84,0.2);
-  max-height: 300px;
-  min-height: 250px;
-  min-width: 200px;
-  max-width: 900px;
+  height: 300px;
+  width: 100%;
   z-index: 30;
   transition: all, 0.2s, ease-in;;
   content: "";
+
+}
+.overlay p {
+  height: 0;
 }
 
-.overlay h1 {
-  display: inline;
+.manage-text {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 10%;
 }
 
-.management-page:hover .overlay{
-  display: block;
-}
+
 .management-page {
   text-decoration: none;
 
 }
+
 .management-page h1 {
   color: white;
   text-align: center;
-  padding-top: 60%;
   display: block;
+  margin: auto;
+
 }
 
 #manage-horses {
