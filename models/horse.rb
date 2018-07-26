@@ -4,7 +4,7 @@ require_relative('owner')
 class Horse
 
   attr_reader :id, :breed
-  attr_accessor :name, :health_details, :current_activity, :hair_coat, :approved
+  attr_accessor :name, :health_details, :current_activity, :hair_coat, :approved, :owner_id
   def initialize options
     @id = options['id'].to_i if options['id']
     @name = options['name'].capitalize if options['name']
@@ -95,8 +95,5 @@ class Horse
   def approve
     @approved = true
   end
-#edited thing!!
-  def change_current_activity(value)
-    @current_activity = value
-  end
+
 end

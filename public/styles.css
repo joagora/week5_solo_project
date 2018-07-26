@@ -363,6 +363,10 @@ input {
   background-image: url('assets/trainers.jpg');
 }
 
+.hide {
+  display: none;
+}
+
 footer {
   width: 100%;
   clear: both;

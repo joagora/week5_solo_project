@@ -55,14 +55,12 @@ end
 #new edited version update:
 
 post '/horses/:id/change_status' do
-  p "-----------------------------"
-  p params
+ p "-------------------------"
+p params
   @horse = Horse.new(params)
-  p "-----------------------"
+  p "-------------------------"
   p @horse
   @horse.update
-  p "-----------------------"
-  p @horse
   redirect to "horses"
 end
 
@@ -97,6 +95,7 @@ end
 
 #update
 post '/horses/:id' do
+
   horse = Horse.new(params)
   horse.update
   redirect to "horses/#{params['id']}"
