@@ -10,5 +10,7 @@
     <dd><%=training.scheduled_date%>
     <dt>Time</dt>
     <dd><%=training.format_time(training.scheduled_time)%>
+    </dd>
   </dl>
+  <a href="/trainings/<%=training.id%>/edit"><button class="button edit-button">Edit</button></a>
 <%end%>
