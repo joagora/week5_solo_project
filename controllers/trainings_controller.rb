@@ -5,8 +5,10 @@ require_relative('../models/trainer')
 also_reload('./models/*')
 
 
+
 get '/trainings' do
-  @trainings = Training.all
+  #sorting the array of objects by date
+  @sorted_trainings = Training.sort_by_date
   erb :"trainings/index"
 end
 
@@ -18,14 +20,15 @@ get '/trainings/new' do
 end
 
 post '/trainings' do
+
   @training = Training.new(params)
+
   @training.save
   erb :"trainings/create"
 end
 
 get '/trainings/:id/edit' do
-  @week_days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-  @types = ["Dressage", "Show jumping", "Lunge", "Walker"]
+  @types = ["dressage", "show jumping", "lunge", "walker"]
   @trainers = Trainer.all
   @training = Training.find(params['id'])
   @training.update

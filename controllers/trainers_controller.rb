@@ -23,3 +23,8 @@ post '/trainers/:id/delete' do
   @trainer_to_remove.delete
   redirect to "trainers"
 end
+
+get '/trainers/:id/edit' do
+  @trainer = Trainer.find(params['id'])
+  erb :"trainers/edit"
+end

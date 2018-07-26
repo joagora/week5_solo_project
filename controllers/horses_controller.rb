@@ -38,12 +38,7 @@ get '/horses/:id/edit' do
   erb :"horses/edit"
 end
 
-#update
-post '/horses/:id' do
-  horse = Horse.new(params)
-  horse.update
-  redirect to "horses/#{params['id']}"
-end
+
 
 #approve
 post '/horses/:id/approve' do
@@ -63,4 +58,11 @@ get '/horses/:id/trainings' do
   @horse = Horse.find(params['id'])
   @trainings = @horse.trainings
   erb :"horses/trainings_index"
+end
+
+#update
+post '/horses/:id' do
+  horse = Horse.new(params)
+  horse.update
+  redirect to "horses/#{params['id']}"
 end
