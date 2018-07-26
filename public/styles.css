@@ -50,6 +50,18 @@ a button {
   cursor: pointer;
 }
 
+.button-small {
+  width: 90px;
+  height: 40px;;
+  font-size: 0.8em;
+  border-radius: 30px;
+  color: white;
+
+  text-decoration: none;
+  margin: 4px 4px;
+  cursor: pointer;
+}
+
 .drop-down {
   display: flex;
   flex-direction: column;
@@ -168,6 +180,12 @@ input {
   text-align: center;
 }
 
+.table-container {
+  max-width: 90%;
+  margin: auto;
+  text-align: center;
+}
+
 .content {
   padding-top: 40%;
 }
@@ -175,6 +193,8 @@ input {
 .action-buttons {
   display: flex;
   justify-content: center;
+  width: 300px;
+  float: right;
 }
 .registration {
 
@@ -346,7 +366,6 @@ textarea {
 
 .management-page {
   text-decoration: none;
-
 }
 
 .management-page h1 {
@@ -354,7 +373,15 @@ textarea {
   text-align: center;
   display: block;
   margin: auto;
+}
 
+table {
+  width: 100%;
+  text-align: left;
+}
+
+.button-table-space {
+  width: 300px;
 }
 
 #manage-horses {
@@ -377,6 +404,9 @@ textarea {
 .hide {
   display: none;
 }
+
+
+
 
 footer {
   width: 100%;
