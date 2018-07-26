@@ -10,9 +10,10 @@ class Horse
     @breed = options['breed'].capitalize if options['breed']
     @health_details = options['health_details']
     @current_activity = options['current_activity']
-    @owner_id = options['owner_id']
-    @approved ||= false
+    @owner_id = options['owner_id'].to_i if options['id']
     @hair_coat = options['hair_coat']
+    @approved ||= false
+
   end
 
   def save()

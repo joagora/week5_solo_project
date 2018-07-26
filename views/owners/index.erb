@@ -5,8 +5,8 @@
       <p>Surname: <%=owner.last_name%></p>
       <p>Username <%=owner.username%></p>
       <section class="action-buttons">
-        <form class="delete-button button" action="/owners/<%=owner.id%>/delete" method="post">
-          <input type="submit" name="delete" value="DELETE" class="button">
+        <form action="/owners/<%=owner.id%>/delete" method="post">
+          <input type="submit" name="delete" value="Delete" class="button delete-button">
         </form>
         <a href="/owners/<%=owner.id%>/horses"><button class="more-button button">View horses</button></a>
       </section>

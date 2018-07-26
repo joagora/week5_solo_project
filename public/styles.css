@@ -77,6 +77,7 @@ li a {
 #home-content {
   position: absolute;
   top: 0;
+  width: 100%;
 }
 
 #home-container {
@@ -107,16 +108,17 @@ li a {
   grid-area: 2 / 2 / 3 / 3;
 }
 
-.get-started {
-  width: 150px;
+.get-started-button {
+  width: 180px;
   height: 40px;
   background-color: white;
   border: 2px solid white;
   border-radius: 30px;
   margin-top: 10px;
+  font-size: 0.7em;
 }
 
-.get-started a {
+.get-started-button a {
   color: black;
   font-family: Helvetica, Arial, sans-serif;
   text-decoration: none;
@@ -142,8 +144,10 @@ h1, p {
 }
 
 .service-icon {
-  height: 100px;
+  height: 130px;
 }
+
+
 /* registration form */
 input {
   display: block;
@@ -224,21 +228,31 @@ input {
 }
 
 .log-in-button {
-  font-size: 1em;
-  background-color: #4CAF50;
+  background-color: rgb(55,88,89);
+}
+
+.button {
+  width: 160px;
+  font-size: 0.9em;
   border-radius: 30px;
   color: white;
-  padding: 15px 32px 15px 32px;
+  padding: 10px 32px 10px 32px;
   text-decoration: none;
   margin: 4px 4px;
   cursor: pointer;
 }
 
-.button {
-  width: 150px;
-  background-color: rgb(55,88,89)
+.edit-button, .more-button {
+  background-color: rgb(198, 202, 213)
 }
 
+.delete-button {
+  background-color: rgb(238, 117, 115)
+}
+
+.add-button, .log-in-button {
+  background-color: rgb(95, 170, 126)
+}
 #logo {
   width: 100%;
   height: 100%;
@@ -257,18 +271,73 @@ input {
 /* adding the admin index page */
 
 #admin-management {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 10px;
+  grid-row-gap: 10px;
+  width: 60%;
   margin: auto;
   margin-top: 60px;
+
 }
 
 .manage {
-  max-height: 200px;
-  min-height: 150px;
+  max-height: 300px;
+  min-height: 250px;
   min-width: 200px;
+  max-width: 900px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 43%;
+
+}
+
+.overlay {
+  display: none;
+  background-color: rgba(39,62,84,0.2);
+  max-height: 300px;
+  min-height: 250px;
+  min-width: 200px;
+  max-width: 900px;
+  z-index: 30;
+  transition: all, 0.2s, ease-in;;
+  content: "";
+}
+
+.overlay h1 {
+  display: inline;
+}
+
+.management-page:hover .overlay{
+  display: block;
+}
+.management-page {
+  text-decoration: none;
+
+}
+.management-page h1 {
+  color: white;
+  text-align: center;
+  padding-top: 60%;
+  display: block;
+}
+
+#manage-horses {
+  background-image: url('assets/horses.jpg');
+}
+
+#manage-owners {
+  background-image: url('assets/owners.jpg');
+}
+
+#manage-trainings {
+  background-image: url('assets/trainings.jpg');
+  background-position: 50% 43%;
+}
+
+#manage-trainers {
+  background-image: url('assets/trainers.jpg');
 }
 
 footer {
@@ -294,5 +363,9 @@ footer p {
 
   #home-content {
     background-position: 12% 50%;
+  }
+
+  .admin-management {
+    justify-content: stretch;
   }
 }

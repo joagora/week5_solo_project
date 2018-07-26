@@ -13,6 +13,7 @@ end
 
 get '/horses/new' do
   @owner = Owner.find(params['owner_id']) if params['owner_id']
+  @owners = Owner.all
   erb :"horses/new"
 end
 
