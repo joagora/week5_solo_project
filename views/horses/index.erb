@@ -1,5 +1,4 @@
 <div class="content-container">
-  <a href="/horses/new"><button class="add-button button">Add horse</button></a>
 
 
   <section class="horse-list list">
@@ -42,8 +41,7 @@
           <p>Name: <%=horse.name%></p>
           <p>Breed: <%=horse.breed%></p>
           <p>Hair coat <%=horse.hair_coat%></p>
-          <a href="/horses/<%=horse.id%>"><button>Show details</button></a>
-
+          <a href="/horses/<%=horse.id%>"><button class="button more-button">Show details</button></a>
 
       <%end%>
     </section>
