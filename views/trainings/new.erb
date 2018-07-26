@@ -2,39 +2,29 @@
   <div class="form-container">
     <form class = "registration" action = "/trainings" method = "post">
         <div class="input-container">
-          <select class="selection" name="type" placeholder="Type of training">
+          <select class="selection" name="type" placeholder="Type of training" required="required">
             <option value="dressage">Dressage</option>
             <option value="show jumping">Show jumping</option>
             <option value="lunge">Lunge</option>
             <option value="walker">Walker</option>
           </select>
         </div>
+
         <div "input-container">
-          <select class="selection" name="day_of_week" placeholder="Day of week">
-            <option value="Monday">Monday</option>
-            <option value="Tuesday">Tuesday</option>
-            <option value="Wednesday">Wednesday</option>
-            <option value="Thursday">Thursday</option>
-            <option value="Friday">Friday</option>
-            <option value="Saturday">Saturday</option>
-            <option value="Sunday">Sunday</option>
-          </select>
-        </div>
-        <div "input-container">
-          <select class="selection" name="trainer_id" placeholder="Trainer">
+          <select required="required" class="selection" name="trainer_id" placeholder="Trainer">
             <%for trainer in @trainers%>
               <option value="<%=trainer.id%>"><%=trainer.full_name%></option>
             <%end%>
           </select>
         </div>
         <div "input-container">
-          <input type="number" name="duration" placeholder="Duration">
+          <input required="required" type="number" name="duration" placeholder="Duration">
         </div>
         <div "input-container">
-          <input type="date" name="scheduled_date" placeholder="Date">
+          <input required="required" type="date" name="scheduled_date" placeholder="Date">
         </div>
         <div "input-container">
-          <input type="time" name="scheduled_time" placeholder="Time">
+          <input require="required" type="time" name="scheduled_time" placeholder="Time">
         </div>
           <input type="hidden" name="horse_id" value="<%=@horse.id%>">
         <input class="log-in-button button" type="submit" value="Add training">
