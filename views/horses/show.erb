@@ -18,8 +18,10 @@
 
 <section class="action-buttons">
   <a href="/trainings/new?horse_id=<%=@horse.id()%>"><button class="add-button button">Add training</button></a>
+
   <form class="delete-button" action="/horses/<%=@horse.id%>/delete" method="post">
     <input type="submit" name="delete" value="DELETE" class="delete-button button">
   </form>
-    <a href="/horses/<%=@horse.id%>/trainings"><button class="more-button button">Show trainings</button></a>
+
+  <a href="/horses/<%=@horse.id%>/trainings"><button class="more-button button">Show trainings</button></a>
 </section>

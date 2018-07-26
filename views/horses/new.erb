@@ -13,14 +13,10 @@
   <textarea name="health_details" rows="4" cols="80"></textarea>
 
   <%if @owner == nil%>
-    <select name="owner_id" placeholder="Owner">
-      <%for owner in @owners%>
-        <option value="<%=owner.id%>"><%=owner.full_name%></option>
-      <%end%>
-    </select>
+    <input type="text" name="owner_id">
   <%else%>
     <input type="hidden" name="owner_id" value="<%=@owner.id%>">
   <%end%>
-  <input class="add-button button" type="submit" value="Add horse">
+    <input class="add-button button" type="submit" value="Add horse">
 
 </form>
