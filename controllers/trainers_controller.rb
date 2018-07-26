@@ -32,7 +32,7 @@ end
 
 ###edited
 post '/trainers/:id' do
-  @trainer = Trainer.new(params)
-  @trainer.update
-  redirect to "horses/#{params['id']}"
+  trainer = Trainer.new(params)
+  trainer.update
+  redirect to "trainers"
 end

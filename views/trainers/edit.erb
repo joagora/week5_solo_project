@@ -1,5 +1,5 @@
 <main class="content-container">
-  <form class="registration" action="/trainers" method="post">
+  <form class="registration" action="/trainers/<%=@trainer.id%>" method="post">
     <label for="first_name"></label>
     <input class="input-field" type="text" name="first_name" value="<%=@trainer.first_name%>">
     <label for="last_name"></label>
