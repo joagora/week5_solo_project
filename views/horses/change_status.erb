@@ -1,6 +1,12 @@
 <form class="change_status" action="/horses/<%=@horse.id%>/change_status" method="post">
   <select class="status" name="current_activity">
       <option value="In training">In training</option>
+      <option value="On paddock">On paddock</option>
+      <option value="In box">In box</option>
+      <option value="Vet visit">Vet visit</option>
+      <option value="Horse-smith">Horse-smith</option>
+      <option value="Competition">Competition</option>
+      <option value="Other">Other</option>
   </select>
   <label for="name"></label>
   <input type="hidden" name="name" value="<%=@horse.name%>">
