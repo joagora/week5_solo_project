@@ -5,12 +5,13 @@
 
     <section class="horse item-section">
       <%if @horses_pending.length > 0%>
+      <h1>Pending approval:</h1>
       <table id="pending-horses">
         <th>Name</th>
         <th>Breed</th>
         <th>Hair coat</th>
         <th>Owner</th>
-        <th>/th>
+        <th></th>
           <%for horse in @horses_pending%>
         <tr>
           <td><%=horse.name%></td>
@@ -34,6 +35,9 @@
     <section>
 
       <section class="horse item-section">
+      <%if @horses_pending.length > 0%>
+        <h1>Approved</h1>
+      <%end%>
         <table>
           <th>Name</th>
           <th>Breed</th>

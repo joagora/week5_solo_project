@@ -1,26 +1,28 @@
-<main class="content-container">
-  <dl>
 
-    <dt>Name</dt>
-    <dd>
-      <%=@horse.name%>
-    </dd>
+  <main class="table-container">
 
-    <dt>Breed</dt>
-    <dd>
-      <%=@horse.breed%>
-    </dd>
+    <dl>
 
-    <dt>Hair coat</dt>
-    <dd>
-      <%=@horse.hair_coat%>
-    </dd>
-  </dl>
+      <dt>Name</dt>
+      <dd>
+        <%=@horse.name%>
+      </dd>
 
-  <section class="action-buttons">
-    <a href="/horses/<%=@horse.id%>/change_status"><button class="button more-button">Change status</button></a>
-    <a href="/trainings/new?horse_id=<%=@horse.id()%>"><button class="add-button button">Add training</button></a>
+      <dt>Breed</dt>
+      <dd>
+        <%=@horse.breed%>
+      </dd>
 
-    <a href="/horses/<%=@horse.id%>/trainings"><button class="more-button button">Trainings</button></a>
-  </section>
-</main>
+      <dt>Hair coat</dt>
+      <dd>
+        <%=@horse.hair_coat%>
+      </dd>
+    </dl>
+
+    <section class="action-buttons-center">
+      <a href="/horses/<%=@horse.id%>/change_status"><button class="button more-button">Change status</button></a>
+      <a href="/trainings/new?horse_id=<%=@horse.id()%>"><button class="add-button button">Add training</button></a>
+
+      <a href="/horses/<%=@horse.id%>/trainings"><button class="more-button button">Trainings</button></a>
+    </section>
+  </main>

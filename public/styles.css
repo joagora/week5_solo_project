@@ -56,7 +56,6 @@ a button {
   font-size: 0.8em;
   border-radius: 30px;
   color: white;
-
   text-decoration: none;
   margin: 4px 4px;
   cursor: pointer;
@@ -68,14 +67,11 @@ a button {
   display: none;
 }
 
-
-
 li a {
   text-align: center;
   text-decoration: none;
   color: white;
 }
-
 
 /* welcome page */
 #welcome-page {
@@ -183,6 +179,7 @@ input {
 .table-container {
   max-width: 90%;
   margin: auto;
+  margin-top: 20px;
   text-align: center;
 }
 
@@ -195,6 +192,13 @@ input {
   justify-content: center;
   float: right;
 }
+
+.action-buttons-center {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
 .registration {
 
   width: 100%;
@@ -280,7 +284,7 @@ textarea {
   color: white;
   padding: 10px 32px 10px 32px;
   text-decoration: none;
-  margin: 4px 4px;
+  margin: auto;
   cursor: pointer;
 }
 
@@ -387,8 +391,16 @@ table {
   border-collapse: collapse;
 }
 
+#pending-horses {
+  margin: 50px 0;
+}
 tr:hover {
   background-color: rgba(232, 232, 232)
+}
+
+dt {
+  font-weight: 600;
+  font-size: 1.1em;
 }
 
 .trainer-table {

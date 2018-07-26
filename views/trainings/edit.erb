@@ -2,14 +2,14 @@
   <div class="form-container">
     <form class = "registration" action = "/trainings" method = "post">
       <div class="input-container">
-        <select class="selection" name="type" placeholder="Type of training">
+        <select class="input-field" name="type" placeholder="Type of training">
           <%for type in @types%>
             <option value="<%=type%>" <%= 'selected' if @training.type == type %>><%=type.capitalize%></option>
           <%end%>
         </select>
 
         <div "input-container">
-          <select required="required" class="selection" name="trainer_id" placeholder="Trainer">
+          <select required="required" class="input-field" name="trainer_id" placeholder="Trainer">
             <%for trainer in @trainers%>
             <option value="<%=trainer.id%>" <%= 'selected' if @training.trainer.id == trainer.id %>><%=trainer.full_name%></option>
             <%end%>
@@ -17,14 +17,15 @@
         </select>
       </div>
       <div "input-container">
-        <input required="required" type="number" name="duration" placeholder="Duration" value="<%=@training.duration%>">
+        <input class="input-field" required="required" type="number" name="duration" placeholder="Duration" value="<%=@training.duration%>">
       </div>
       <div "input-container">
-        <input required="required" type="date" name="scheduled_date" placeholder="Date" value="<%=@training.scheduled_date%>">
+        <input class="input-field" required="required" type="date" name="scheduled_date" placeholder="Date" value="<%=@training.scheduled_date%>">
       </div>
       <div "input-container">
-        <input require="required" type="time" name="scheduled_time" placeholder="Time" value="<%=@training.scheduled_time%>">
+        <input class="input-field" require="required" type="time" name="scheduled_time" placeholder="Time" value="<%=@training.scheduled_time%>">
       </div>
 
       <input class="log-in-button button" type="submit" value="Edit">
+    </div>
     </div>

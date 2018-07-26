@@ -1,16 +1,18 @@
-<%for training in @trainings%>
-  <dl>
-    <dt>Day</dt>
-    <dd><%=training.day_of_week%>
-    <dt>Type</dt>
-    <dd><%=training.type%>
-    <dt>Trainer</dt>
-    <dd><%=training.trainer.full_name%>
-    <dt>Date</dt>
-    <dd><%=training.scheduled_date%>
-    <dt>Time</dt>
-    <dd><%=training.format_time(training.scheduled_time)%>
-    </dd>
-  </dl>
-  <a href="/trainings/<%=training.id%>/edit"><button class="button edit-button">Edit</button></a>
-<%end%>
+<main class="table-container">
+  <%for training in @trainings%>
+    <dl>
+      <dt>Day</dt>
+      <dd><%=training.day_of_week%>
+      <dt>Type</dt>
+      <dd><%=training.type%>
+      <dt>Trainer</dt>
+      <dd><%=training.trainer.full_name%>
+      <dt>Date</dt>
+      <dd><%=training.scheduled_date%>
+      <dt>Time</dt>
+      <dd><%=training.format_time(training.scheduled_time)%>
+      </dd>
+    </dl>
+    <a href="/trainings/<%=training.id%>/edit"><button class="button edit-button">Edit</button></a>
+  <%end%>
+</main>
