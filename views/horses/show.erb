@@ -1,27 +1,29 @@
-<dl>
+<main class="content-container">
+  <dl>
 
-  <dt>Name</dt>
-  <dd>
-    <%=@horse.name%>
-  </dd>
+    <dt>Name</dt>
+    <dd>
+      <%=@horse.name%>
+    </dd>
 
-  <dt>Breed</dt>
-  <dd>
-    <%=@horse.breed%>
-  </dd>
+    <dt>Breed</dt>
+    <dd>
+      <%=@horse.breed%>
+    </dd>
 
-  <dt>Hair coat</dt>
-  <dd>
-    <%=@horse.hair_coat%>
-  </dd>
-</dl>
+    <dt>Hair coat</dt>
+    <dd>
+      <%=@horse.hair_coat%>
+    </dd>
+  </dl>
 
-<section class="action-buttons">
-  <a href="/trainings/new?horse_id=<%=@horse.id()%>"><button class="add-button button">Add training</button></a>
+  <section class="action-buttons">
+    <a href="/trainings/new?horse_id=<%=@horse.id()%>"><button class="add-button button">Add training</button></a>
 
-  <form class="delete-button" action="/horses/<%=@horse.id%>/delete" method="post">
-    <input type="submit" name="delete" value="DELETE" class="delete-button button">
-  </form>
+    <form action="/horses/<%=@horse.id%>/delete" method="post">
+      <input class="button delete-button" type="submit" name="delete" value="Delete" class="delete-button button">
+    </form>
 
-  <a href="/horses/<%=@horse.id%>/trainings"><button class="more-button button">Show trainings</button></a>
-</section>
+    <a href="/horses/<%=@horse.id%>/trainings"><button class="more-button button">Trainings</button></a>
+  </section>
+</main>
