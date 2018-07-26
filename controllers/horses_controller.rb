@@ -38,6 +38,41 @@ get '/horses/:id/edit' do
   erb :"horses/edit"
 end
 
+get '/horses/:id/change_status' do
+    @horse = Horse.find(params['id'])
+  erb :"horses/change_status"
+end
+
+
+
+
+
+
+
+
+
+
+#new edited version update:
+
+post '/horses/:id/change_status' do
+  p "-----------------------------"
+  p params
+  @horse = Horse.new(params)
+  p "-----------------------"
+  p @horse
+  @horse.update
+  p "-----------------------"
+  p @horse
+  redirect to "horses"
+end
+
+
+
+
+
+
+
+
 
 
 #approve

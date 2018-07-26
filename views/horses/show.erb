@@ -17,12 +17,28 @@
     </dd>
   </dl>
 
-  <section class="action-buttons">
-    <a href="/trainings/new?horse_id=<%=@horse.id()%>"><button class="add-button button">Add training</button></a>
 
-    <form action="/horses/<%=@horse.id%>/delete" method="post">
-      <input class="button delete-button" type="submit" name="delete" value="Delete" class="delete-button button">
-    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <section class="action-buttons">
+    <a href="/horses/<%=@horse.id%>/change_status"><button>Change status</button></a>
+    <a href="/trainings/new?horse_id=<%=@horse.id()%>"><button class="add-button button">Add training</button></a>
 
     <a href="/horses/<%=@horse.id%>/trainings"><button class="more-button button">Trainings</button></a>
   </section>

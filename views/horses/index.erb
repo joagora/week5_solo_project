@@ -42,7 +42,9 @@
           <p>Breed: <%=horse.breed%></p>
           <p>Hair coat <%=horse.hair_coat%></p>
           <a href="/horses/<%=horse.id%>"><button class="button more-button">Show details</button></a>
-
+          <form action="/horses/<%=horse.id%>/delete" method="post">
+            <input class="button delete-button" type="submit" name="delete" value="Delete" class="delete-button button">
+          </form>
       <%end%>
     </section>
 

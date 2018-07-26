@@ -95,4 +95,8 @@ class Horse
   def approve
     @approved = true
   end
+#edited thing!!
+  def change_current_activity(value)
+    @current_activity = value
+  end
 end

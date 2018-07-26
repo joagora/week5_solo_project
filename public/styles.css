@@ -46,6 +46,9 @@ ul li {
   flex-grow: 3;
 }
 
+a button {
+  cursor: pointer;
+}
 
 .drop-down {
   display: flex;

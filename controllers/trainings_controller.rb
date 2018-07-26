@@ -20,9 +20,7 @@ get '/trainings/new' do
 end
 
 post '/trainings' do
-
   @training = Training.new(params)
-
   @training.save
   erb :"trainings/create"
 end
