@@ -1,5 +1,6 @@
 require_relative('../db/sql_runner')
 require_relative('trainer')
+require_relative('date_time')
 class Training
   attr_reader :id
   attr_accessor :type, :scheduled_date, :scheduled_time, :duration, :day_of_week, :horse_id, :trainer_id
@@ -12,6 +13,7 @@ class Training
     @day_of_week = options['day_of_week']
     @horse_id = options['horse_id'].to_i if options['horse_id']
     @trainer_id = options['trainer_id'].to_i if options['trainer_id']
+    assign_day_of_week
   end
 
   def save()
@@ -75,5 +77,16 @@ class Training
 
   def format_time(time)
     time.chomp[0...-3]
+  end
+
+  def self.sort_by_date
+    trainings = Training.all
+    sorted_trainings = trainings.sort{|training_1, training_2| DateTime.parse(training_1.scheduled_date) <=> DateTime.parse(training_2.scheduled_date)}
+    return sorted_trainings
+  end
+
+  def assign_day_of_week
+    @day_of_week = FindDate.day_of_week(@scheduled_date)
+    update
   end
 end

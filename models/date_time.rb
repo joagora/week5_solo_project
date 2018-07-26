@@ -1,7 +1,7 @@
 require('date')
 require('chronic')
 
-class DateTime
+class FindDate
   def initialize
   end
 
@@ -12,5 +12,8 @@ class DateTime
   def time_now
     return Time.now
   end
-  
+
+  def self.day_of_week(string_date)
+    return DateTime.parse(string_date).strftime("%A")
+  end
 end

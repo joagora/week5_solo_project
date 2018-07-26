@@ -1,24 +1,30 @@
 <div class="content-container">
+  <div class="form-container">
     <form class = "registration" action = "/trainings" method = "post">
-          <select class="input-field" name="type" placeholder="Type of training">
-            <%for type in @types%>
-              <option value="<%=type%>" <%= 'selected' if @training.type == type %>><%=type%></option>
-            <%end%>
-          </select>
-          <select class="input-field" name="day_of_week" placeholder="Day of week">
-            <%for week_day in @week_days%>
-              <option value="<%=week_day%>" <%= 'selected' if @training.day_of_week == week_day %>><%=week_day%></option>
-            <%end%>
-          </select>
+      <div class="input-container">
+        <select class="selection" name="type" placeholder="Type of training">
+          <%for type in @types%>
+            <option value="<%=type%>" <%= 'selected' if @training.type == type %>><%=type.capitalize%></option>
+          <%end%>
+        </select>
 
-          <select class="input-field" name="trainer_id" placeholder="Trainer">
+        <div "input-container">
+          <select required="required" class="selection" name="trainer_id" placeholder="Trainer">
             <%for trainer in @trainers%>
-              <option value="<%=trainer.id%>" <%= 'selected' if @training.trainer.id == trainer.id %>><%=trainer.full_name%></option>
+            <option value="<%=trainer.id%>" <%= 'selected' if @training.trainer.id == trainer.id %>><%=trainer.full_name%></option>
             <%end%>
           </select>
+        </select>
+      </div>
+      <div "input-container">
+        <input required="required" type="number" name="duration" placeholder="Duration" value="<%=@training.duration%>">
+      </div>
+      <div "input-container">
+        <input required="required" type="date" name="scheduled_date" placeholder="Date" value="<%=@training.scheduled_date%>">
+      </div>
+      <div "input-container">
+        <input require="required" type="time" name="scheduled_time" placeholder="Time" value="<%=@training.scheduled_time%>">
+      </div>
 
-          <input class="input-field" type="number" name="duration" placeholder="Duration" value="<%=@training.duration%>">
-
-        <input class="log-in-button button" type="submit" value="Edit">
-
-</div>
+      <input class="log-in-button button" type="submit" value="Add training">
+    </div>
