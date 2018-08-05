@@ -39,7 +39,6 @@ post '/owners/login' do
   else
     redirect to "owners/invalid_user"
   end
-
 end
 
 get '/owners/login' do
