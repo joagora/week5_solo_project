@@ -27,7 +27,7 @@ nav ul {
   display: flex;
 }
 
-ul li {
+nav ul li {
   display: block;
   width: 120px;
   text-align: center;
@@ -51,7 +51,7 @@ a button {
   cursor: pointer;
 }
 
-li a {
+nav li a {
   text-align: center;
   text-decoration: none;
   color: white;
@@ -129,7 +129,7 @@ h1, p {
 }
 /* services sectio on welcome page */
 #services {
-  background: rgb(235, 234, 231);
+  background-image: linear-gradient(to top, #ffffff, #f7f7f8, #eeeef1, #e6e6ea, #dddee3);
   padding: 2% 0;
   margin: 1% 0;
   min-height: 100px;
@@ -430,39 +430,6 @@ textarea {
   display: block;
 }
 
-.overlay {
-  overflow: hidden;
-  display: none;
-  background-color: rgba(39,62,84,0.2);
-  height: 300px;
-  width: 100%;
-  z-index: 30;
-  transition: all, 0.2s, ease-in;;
-  content: "";
-
-}
-.overlay p {
-  height: 0;
-}
-
-.manage-text {
-  position: absolute;
-  right: 0;
-  left: 0;
-  bottom: 10%;
-}
-
-
-.management-page {
-  text-decoration: none;
-}
-
-.management-page h1 {
-  color: white;
-  text-align: center;
-  display: block;
-  margin: auto;
-}
 
 table {
   width: 100%;
@@ -497,25 +464,15 @@ dt {
   margin: auto;
 }
 
+#management-page{
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: 20% 80%;
+  grid-template-areas: "sidebar main"
+}
+
 #pending-horses {
   padding-bottom: 50px;
-}
-
-#manage-horses {
-  background-image: url('assets/horses.jpg');
-}
-
-#manage-owners {
-  background-image: url('assets/owners.jpg');
-}
-
-#manage-trainings {
-  background-image: url('assets/trainings.jpg');
-  background-position: 50% 43%;
-}
-
-#manage-trainers {
-  background-image: url('assets/trainers.jpg');
 }
 
 .hide {

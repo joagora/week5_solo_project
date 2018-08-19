@@ -1,74 +1,81 @@
-<div class="table-container">
+<div id="management-page">
+  <aside>
+    <ul>
+      <li><a href="/horses">Manage horses</a></li>
+      <li><a href="/trainings">Manage trainings</a></li>
+      <li><a href="trainers">Manage trainers</a></li>
+      <li><a href="owners">Manage owners</a></li>
+    </ul>
+  </aside>
+  <main id="management-area">
+    <div class="table-container">
+      <div class="horses-table">
+        <%if @horses_pending.length > 0%>
+        <section class="horse item-section">
 
-
-  <div class="horses-table">
-
-    <section class="horse item-section">
-      <%if @horses_pending.length > 0%>
-      <h1>Pending approval:</h1>
-      <table id="pending-horses">
-        <th>Name</th>
-        <th>Breed</th>
-        <th>Hair coat</th>
-        <th>Owner</th>
-        <th></th>
-          <%for horse in @horses_pending%>
-        <tr>
-          <td><%=horse.name%></td>
-          <td><%=horse.breed%></td>
-          <td><%=horse.hair_coat%></td>
-          <td><%=horse.owner.full_name%></td>
-          <td>
-            <section class="action-buttons">
-                  <form class="approve" action="/horses/<%=horse.id%>/approve" method="post">
-                    <input class="button-small add-button" type="submit" name="approved" value="Approve">
-                  </form>
-                  <form action="/horses/<%=horse.id%>/delete" method="post">
-                    <input class="delete-button button-small" type="submit" name="delete" value="Delete" class="button">
-                  </form>
-                </section>
+          <h1>Pending approval:</h1>
+          <table id="pending-horses">
+            <th>Name</th>
+            <th>Breed</th>
+            <th>Hair coat</th>
+            <th>Owner</th>
+            <th></th>
+              <%for horse in @horses_pending%>
+            <tr>
+              <td><%=horse.name%></td>
+              <td><%=horse.breed%></td>
+              <td><%=horse.hair_coat%></td>
+              <td><%=horse.owner.full_name%></td>
+              <td>
+                <div class="action-buttons">
+                      <form class="approve" action="/horses/<%=horse.id%>/approve" method="post">
+                        <input class="button-small add-button" type="submit" name="approved" value="Approve">
+                      </form>
+                      <form action="/horses/<%=horse.id%>/delete" method="post">
+                        <input class="delete-button button-small" type="submit" name="delete" value="Delete" class="button">
+                      </form>
+                </div>
               </td>
-        </tr>
-        <%end%>
-        <%end%>
-    </section>
-    <section>
+            </tr>
+            <%end%>
+          </table>
+        </section>
+  <%end%>
+        <section class="horse item-section">
+          <%if @horses_pending.length > 0%>
+            <h1>Approved</h1>
+          <%end%>
+            <table>
+              <th>Name</th>
+              <th>Breed</th>
+              <th>Hair coat</th>
+              <th>Current activity</th>
+              <th></th>
+              <%for horse in @approved_horses%>
+              <tr>
 
-      <section class="horse item-section">
-      <%if @horses_pending.length > 0%>
-        <h1>Approved</h1>
-      <%end%>
-        <table>
-          <th>Name</th>
-          <th>Breed</th>
-          <th>Hair coat</th>
-          <th>Current activity</th>
-          <th></th>
-          <%for horse in @approved_horses%>
-          <tr>
+                <td><%=horse.name%></td>
+                <td><%=horse.breed%></td>
+                <td><%=horse.hair_coat%></td>
+                <td><%=horse.current_activity%></td>
+                <td>
+                  <div class="action-buttons">
+                    <a href="/horses/<%=horse.id%>"><button class="button-small more-button">Show details</button></a>
 
-            <td><%=horse.name%></td>
-            <td><%=horse.breed%></td>
-            <td><%=horse.hair_coat%></td>
-            <td><%=horse.current_activity%></td>
-            <td>
-              <section class="action-buttons">
-                <a href="/horses/<%=horse.id%>"><button class="button-small more-button">Show details</button></a>
-
-                <form action="/horses/<%=horse.id%>/delete" method="post">
-                  <input class="button-small delete-button" type="submit" name="delete" value="Delete" class="delete-button button">
-                </form>
-              </section>
-            </td>
-          </tr>
-<%end%>
-        </table>
-
-
-      </section>
+                    <form action="/horses/<%=horse.id%>/delete" method="post">
+                      <input class="button-small delete-button" type="submit" name="delete" value="Delete" class="delete-button button">
+                    </form>
+                  </div>
+                </td>
+              </tr>
+          <%end%>
+            </table>
+        </section>
 
 
 
-      <a href="/admin"><button class="more-button button">Go back</button></a>
+        <a href="/admin"><button class="more-button button">Go back</button></a>
+      </div>
     </div>
-  </div>
+  </main>
+</div>
