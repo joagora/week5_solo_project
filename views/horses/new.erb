@@ -1,20 +1,24 @@
-<main class="content-container">
-<form class="registration" action="/horses" method="post">
-  <label for="name"></label>
-  <input class="input-field" type="text" name="name" required="required" placeholder="Name">
+<div class="log-in-page sand-background">
+  <main class="content-container">
+    <div class="log-in-form">
+    <form class="registration" action="/horses" method="post">
+      <label class="input-label" for="name">Name</label>
+      <input class="input-field" type="text" name="name" required="required">
 
-  <label for="breed"></label>
-  <input class="input-field" type="text" name="breed" required="required" placeholder="Breed">
+      <label class="input-label" for="breed">Breed</label>
+      <input class="input-field" type="text" name="breed" required="required">
 
-  <label for="hair_coat"></label>
-  <input class="input-field" type="text" name="hair_coat" required="required" placeholder="Hair coat">
+      <label class="input-label" for="hair_coat">Hair coat</label>
+      <input class="input-field" type="text" name="hair_coat" required="required">
 
-  <label for="health_details">If your horse has any health-issues, specify it here:</label>
-  <textarea name="health_details" rows="4" cols="80"></textarea>
+      <label class="input-label" for="health_details">If your horse has any health-issues, specify it here:</label>
+      <textarea name="health_details" rows="4" cols="80"></textarea>
 
-    <input type="hidden" name="owner_id" value="<%=@owner.id%>">
+      <input type="hidden" name="owner_id" value="<%=@owner.id%>">
 
-    <input class="add-button button" type="submit" value="Add horse">
+      <input class="log-in-button button" type="submit" value="Add horse">
 
-</form>
-</main>
+    </form>
+  </div>
+  </main>
+</div>

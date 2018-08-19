@@ -1,34 +1,35 @@
 
-<div class="content-container">
+<div class="log-in-page sand-background">
   <div class="form-container">
     <form class = "registration" action = "/trainings" method = "post">
-        <div class="input-container">
-          <select class="input-field" name="type" placeholder="Type of training" required="required">
-            <option value="dressage">Dressage</option>
-            <option value="show jumping">Show jumping</option>
-            <option value="lunge">Lunge</option>
-            <option value="walker">Walker</option>
-          </select>
-        </div>
+      <div class="input-container">
+        <label for="type" class="input-label">Type</label>
+        <select class="input-field" name="type" required="required">
+          <option value="dressage">Dressage</option>
+          <option value="show jumping">Show jumping</option>
+          <option value="lunge">Lunge</option>
+          <option value="walker">Walker</option>
+        </select>
+      </div>
 
+      <label for="trainer-id" class="input-label">Trainer</label>
+      <select required="required" class="input-field" name="trainer_id">
+        <%if @trainers.length == 0 %>
+        <option>No trainer available</option>
+        return
+        <%end%>
+        <%for trainer in @trainers%>
+        <option value="<%=trainer.id%>"><%=trainer.full_name%></option>
+        <%end%>
+      </select>
 
-          <select required="required" class="input-field" name="trainer_id" placeholder="Trainer">
-            <%if @trainers.length == 0 %>
-              <option>No trainer available</option>
-              return
-            <%end%>
-            <%for trainer in @trainers%>
-              <option value="<%=trainer.id%>"><%=trainer.full_name%></option>
-            <%end%>
-          </select>
+      <input class="input-field" required="required" type="number" name="duration" placeholder="Duration">
 
-          <input class="input-field" required="required" type="number" name="duration" placeholder="Duration">
+      <input class="input-field" required="required" type="date" name="scheduled_date" placeholder="Date">
 
-          <input class="input-field" required="required" type="date" name="scheduled_date" placeholder="Date">
+      <input class="input-field" require="required" type="time" name="scheduled_time" placeholder="Time">
 
-          <input class="input-field" require="required" type="time" name="scheduled_time" placeholder="Time">
+      <input type="hidden" name="horse_id" value="<%=@horse.id%>">
+      <input class="log-in-button button" type="submit" value="Add training">
 
-          <input type="hidden" name="horse_id" value="<%=@horse.id%>">
-        <input class="log-in-button button" type="submit" value="Add training">
-
-</div>
+    </div>
