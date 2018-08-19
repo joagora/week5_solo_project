@@ -165,9 +165,9 @@ h1, p {
 }
 
 /* registration form */
-input {
+/* input {
   display: block;
-}
+} */
 
 .content-container {
   max-width: 400px;
@@ -185,7 +185,7 @@ input {
   top: 0;
   height: 100vh;
   width: 100%;
-  background: linear-gradient(to right top, #fad1c2, #f1b7bb, #dca0bf, #b391c8, #7189cb);
+  background-image: linear-gradient(to top, #fad1c2, #f6b2b4, #e896b6, #c681c3, #8777d3);
 }
 
 .table-container {
@@ -247,7 +247,7 @@ input {
 }
 
 .registration {
-  width: 80%;
+  width: 300px;
   margin: auto;
   color: black;
   padding: 200px 0;
@@ -279,6 +279,10 @@ input {
 
 .log-in-form .input-field {
   color: white;
+}
+
+#login-registration-button {
+  padding-top: 20px;
 }
 
 textarea {
@@ -336,13 +340,6 @@ textarea {
   margin: auto;
 }
 
-.log-in-button {
-  background-color: rgb(86, 114, 191);
-  border: none;
-  -webkit-box-shadow: 4px 4px 11px -3px rgba(0,0,0,0.75);
-  -moz-box-shadow: 4px 4px 11px -3px rgba(0,0,0,0.75);
-  box-shadow: 4px 4px 11px -3px rgba(0,0,0,0.75);
-}
 
 .button {
   width: 160px;
@@ -350,11 +347,26 @@ textarea {
   font-size: 0.9em;
   border-radius: 30px;
   color: white;
-  padding: 10px 32px 10px 32px;
+  padding: 20px 32px 32px 32px;
   text-decoration: none;
   margin: auto;
   cursor: pointer;
 }
+
+.log-in-button {
+  background-color: rgb(86, 114, 191);
+  border: none;
+  -webkit-box-shadow: 4px 4px 11px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 4px 4px 11px -3px rgba(0,0,0,0.75);
+  box-shadow: 4px 4px 11px -3px rgba(0,0,0,0.75);
+  border-radius: 5px;
+  width: 300px;
+}
+
+#registration-button {
+  background-color: rgb(187, 196, 227);
+}
+
 
 .button-small:hover {
   opacity: 0.9;
