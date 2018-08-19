@@ -36,16 +36,6 @@ ul li {
   color: white;
 }
 
-#logo {
-  background-image: url("assets/horse_icon.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 40px;
-  width: 60px;
-  margin-left: 40px;
-  flex-grow: 3;
-}
-
 a button {
   cursor: pointer;
 }
@@ -59,12 +49,6 @@ a button {
   text-decoration: none;
   margin: 4px 4px;
   cursor: pointer;
-}
-
-.drop-down {
-  display: flex;
-  flex-direction: column;
-  display: none;
 }
 
 li a {
@@ -227,6 +211,41 @@ input {
   margin: auto;
 }
 
+
+/* login page */
+.log-in-page {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+
+.logo-area {
+  flex-basis: 50%;
+  flex-shrink: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  font-size: 4vw;
+}
+
+.logo-area * {
+  margin: 10px auto;
+}
+
+.logo-image {
+  width: 30%;
+  height: auto;
+}
+
+.log-in-form {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .registration {
   width: 80%;
   margin: auto;
@@ -271,18 +290,18 @@ textarea {
   align-self: stretch;
 }
 
-.register-button {
-  font-size: 1em;
-  background-color: #4CAF50;
-  border-radius: 30px;
+/* .register-button {
+  /* font-size: 1em; */
+  /* background-color: #4CAF50; */
+  /* border-radius: 30px;
   border: none;
   color: white;
   padding: 15px 32px 15px 32px;
   text-decoration: none;
   margin: 4px 4px;
   cursor: pointer;
-  align-self: center;
-}
+  align-self: center; */
+} */
 
 .confirmation {
   position: absolute;
@@ -357,16 +376,18 @@ textarea {
 #logo {
   width: 100%;
   height: 100%;
-
+  background-image: url("assets/horse_icon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 40px;
+  width: 60px;
+  margin-left: 40px;
+  flex-grow: 3;
 }
 
 #logo a {
   float: left;
   color: transparent;
-}
-
-.horse-list {
-
 }
 
 /* adding the admin index page */
@@ -396,7 +417,6 @@ textarea {
 .manage:hover .overlay {
   display: block;
 }
-
 
 .overlay {
   overflow: hidden;
@@ -490,9 +510,6 @@ dt {
   display: none;
 }
 
-
-
-
 footer {
   width: 100%;
   clear: both;
@@ -521,6 +538,8 @@ footer p {
   .admin-management {
     justify-content: stretch;
   }
+
+
 }
 
 @media (max-width: 500px) {
@@ -548,5 +567,13 @@ footer p {
 
   .service-details:last-of-type{
     margin-bottom: 0;
+  }
+
+  .logo-area {
+    display: none;
+  }
+
+  .log-in-form {
+    flex-basis: 100%;
   }
 }
