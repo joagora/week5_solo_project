@@ -100,7 +100,7 @@ li a {
   float: right;
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 70% 30%;
+  grid-template-rows: 30% 40% 30%;
   text-align: center;
   color: white;
 
@@ -108,18 +108,19 @@ li a {
 
 #welcome-container {
   position: relative;
-  top: 25%;
-  align-self: center;
+  top: 35%;
+  -webkit-align: end;
+  align-self: end;
   font-size: 30px;
   grid-area: 1 / 1 / 2 / 3;
 }
 
 #owner {
-  grid-area: 2 / 1 / 3 / 2;
+  grid-area: 3 / 1 / 4 / 2;
 }
 
 #management {
-  grid-area: 2 / 2 / 3 / 3;
+  grid-area: 3 / 2 / 4 / 3;
 }
 
 .get-started-button {
@@ -144,7 +145,7 @@ h1, p {
 }
 /* services sectio on welcome page */
 #services {
-  background: rgb(248, 248, 248);
+  background: rgb(235, 234, 231);
   padding: 2% 0;
   margin: 1% 0;
   min-height: 100px;
@@ -174,9 +175,7 @@ h1, p {
   margin: 10% 10%;
 }
 
-label {
-  display: none;
-}
+
 .health-label {
   display: inline;
 }
@@ -190,6 +189,19 @@ input {
   max-width: 400px;
   margin: auto;
   text-align: center;
+  position: absolute;
+  top: 20%;
+  right: 0;
+  left: 0;
+  border-radius: 50px;
+}
+
+.sand-background {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(to right top, #fad1c2, #f1b7bb, #dca0bf, #b391c8, #7189cb);
 }
 
 .table-container {
@@ -216,22 +228,38 @@ input {
 }
 
 .registration {
-
-  width: 100%;
+  width: 80%;
+  margin: auto;
   color: black;
-  padding-top: 200px;
+  padding: 200px 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
 
+.input-label{
+  float: left;
+  align-self: flex-start;
+  color: white;
+}
 .input-field {
+  color: black;
   height: 30px;
+  margin-bottom: 5%;
   font-size: 1em;
   text-align: center;
   display: block;
   width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  outline: none;
+  text-align: left;
+}
+
+.log-in-form .input-field {
+  color: white;
 }
 
 textarea {
@@ -247,6 +275,7 @@ textarea {
   font-size: 1em;
   background-color: #4CAF50;
   border-radius: 30px;
+  border: none;
   color: white;
   padding: 15px 32px 15px 32px;
   text-decoration: none;
@@ -289,7 +318,11 @@ textarea {
 }
 
 .log-in-button {
-  background-color: rgb(55,88,89);
+  background-color: rgb(86, 114, 191);
+  border: none;
+  -webkit-box-shadow: 4px 4px 11px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 4px 4px 11px -3px rgba(0,0,0,0.75);
+  box-shadow: 4px 4px 11px -3px rgba(0,0,0,0.75);
 }
 
 .button {
@@ -313,16 +346,14 @@ textarea {
 }
 
 .edit-button, .more-button {
-  background-color: rgb(198, 202, 213)
+  background-color: rgb(60, 153, 161)
 }
 
 .delete-button {
   background-color: rgb(238, 117, 115)
 }
 
-.add-button, .log-in-button {
-  background-color: rgb(95, 170, 126)
-}
+
 #logo {
   width: 100%;
   height: 100%;
