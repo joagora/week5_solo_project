@@ -13,41 +13,30 @@ body {
 nav {
   position: relative;
   top: 0;
-  z-index: 20;
-  padding: 1% 0;
+  z-index: 100;
   color: white;
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.07));
   width: 100%;
   border-bottom: 1px solid white;
-  height: 40px;
+
 }
 
 nav ul {
   list-style: none;
   display: flex;
+  height: 60px;
 }
 
 nav ul li {
   display: block;
   width: 120px;
   text-align: center;
-  line-height: 40px;
+  line-height: 60px;
   font-size: 12pt;
   color: white;
 }
 
 a button {
-  cursor: pointer;
-}
-
-.button-small {
-  width: 90px;
-  height: 40px;;
-  font-size: 0.8em;
-  border-radius: 30px;
-  color: white;
-  text-decoration: none;
-  margin: 4px 4px;
   cursor: pointer;
 }
 
@@ -173,11 +162,6 @@ h1, p {
   max-width: 400px;
   margin: auto;
   text-align: center;
-  position: absolute;
-  top: 100px;
-  right: 0;
-  left: 0;
-  border-radius: 50px;
 }
 
 .sand-background {
@@ -217,6 +201,11 @@ h1, p {
   display: flex;
   justify-content: center;
   margin: auto;
+  padding-top: 20px;
+}
+
+.action-buttons-center * {
+  padding: 5px;
 }
 
 
@@ -357,14 +346,33 @@ textarea {
 
 .button {
   width: 160px;
-  height: 50px;;
+  height: 30px;
   font-size: 0.9em;
-  border-radius: 30px;
   color: white;
   padding: 20px 32px 32px 32px;
   text-decoration: none;
   margin: auto;
   cursor: pointer;
+  border: none;
+  -webkit-box-shadow: 4px 4px 11px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 4px 4px 11px -3px rgba(0,0,0,0.75);
+  box-shadow: 4px 4px 11px -3px rgba(0,0,0,0.75);
+  border-radius: 5px;
+}
+
+.button-small {
+  width: 90px;
+  height: 40px;;
+  font-size: 0.8em;
+  color: white;
+  text-decoration: none;
+  margin: 4px 4px;
+  cursor: pointer;
+  border: none;
+  -webkit-box-shadow: 4px 4px 11px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 4px 4px 11px -3px rgba(0,0,0,0.75);
+  box-shadow: 4px 4px 11px -3px rgba(0,0,0,0.75);
+  border-radius: 5px;
 }
 
 .log-in-button {
@@ -394,6 +402,13 @@ textarea {
   background-color: rgb(238, 117, 115)
 }
 
+.more-button {
+  background-color: rgb(187, 196, 227);
+}
+
+.add-button {
+  background-color: rgb(86, 114, 191);
+}
 
 #logo {
   width: 100%;
@@ -405,6 +420,9 @@ textarea {
   width: 60px;
   margin-left: 40px;
   flex-grow: 3;
+  margin-top: 5px;
+  padding: 5px;
+  z-index: 70;
 }
 
 #logo a {
@@ -413,33 +431,6 @@ textarea {
 }
 
 /* adding the admin index page */
-
-#admin-management {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-gap: 10px;
-  grid-row-gap: 10px;
-  width: 60%;
-  margin: auto;
-  margin-top: 60px;
-
-}
-
-.manage {
-  height: 300px;
-  min-width: 200px;
-  max-width: 900px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 43%;
-  position: relative;
-}
-
-.manage:hover .overlay {
-  display: block;
-}
-
 
 table {
   width: 100%;
@@ -464,18 +455,12 @@ dt {
   margin: auto;
 }
 
-.training-table {
+.training-horses-owners-table {
   width: 90%;
   margin: auto;
 }
 
-.horses-table {
-  width: 90%;
-  margin: auto;
-}
-
-
-
+/*
 .management-page {
   height: 100%;
   width: 100%;
@@ -483,35 +468,58 @@ dt {
   grid-template-columns: 20% 80%;
   position: absolute;
   top: 0;
-
-}
+} */
 
 .management-aside ul {
   padding-top: 60px;
   height: 100vh;
-  width:20%;
+  width:200px;
   position: fixed;
   top: 0;
-  background-color: #021111;
+  background: rgba(34,37,42,0.95);
+  z-index: 50;
+
 }
 
 .management-aside ul li{
-  padding: 13px;
-  background-image: linear-gradient(to top, #021111, #031614, #051a15, #0a1e14, #102112);
+  height: 60px;
+  margin: auto 0;
 }
 
 .management-aside ul li a{
   text-decoration: none;
   color: white;
+  line-height: 60px;
 }
 
 .management-aside ul li:hover {
-  background: #021111;
+  background: #000000;
 }
 
-.management-area{
-  padding-top: 100px;
+.management-image {
+  width: 100%;
+  height: 300px;
+  background-image: url('assets/jumping.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 22%;
+  position: absolute;
+  top: 0;
 }
+
+.management-image-overlay {
+  width: 100%;
+  height: 300px;
+  background-image: linear-gradient(to left bottom, #e0c99f, #f2b199, #f49baf, #d593d4, #829af0);
+  opacity: 0.7;
+}
+
+.management-area {
+  margin-left: 200px;
+  margin-top: 300px;
+}
+
+
 
 .horses {
   margin-top: 40px;

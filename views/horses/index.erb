@@ -7,9 +7,13 @@
       <li><a href="owners">Manage owners</a></li>
     </ul>
   </aside>
+  <div class="management-image">
+    <div class="management-image-overlay">
+    </div>
+  </div>
   <main class="management-area">
+
     <div class="table-container">
-      <div class="horses-table">
         <%if @horses_pending.length > 0%>
         <section class="horse item-section">
 
@@ -75,7 +79,6 @@
 
 
         <a href="/admin"><button class="more-button button">Go back</button></a>
-      </div>
     </div>
   </main>
 </div>

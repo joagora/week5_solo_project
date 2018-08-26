@@ -7,8 +7,12 @@
       <li><a href="owners">Manage owners</a></li>
     </ul>
   </aside>
+  <div class="management-image">
+    <div class="management-image-overlay">
+    </div>
+  </div>
   <main class="management-area">
-    <div class="training-table">
+    <div class="training-horses-owners-table ">
       <div class="form-container">
 
         <table>
@@ -28,7 +32,7 @@
             <td><%=training.horse.name%></td>
             <td><%=training.day_of_week%></td>
             <td>
-              <a href="/trainings/<%=training.id%>/edit"><button class="button-small edit-button">Edit</button></a>
+              <a href="/trainings/<%=training.id%>/edit"><button class="button-small more-button">Edit</button></a>
             </td>
           </tr>
 
