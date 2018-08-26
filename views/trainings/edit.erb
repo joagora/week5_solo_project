@@ -4,7 +4,7 @@
       <div class="input-container">
         <select class="input-field" name="type" placeholder="Type of training">
           <%for type in @types%>
-            <option value="<%=type%>" <%= 'selected' if @training.type == type %>><%=type.capitalize%></option>
+          <option value="<%=type%>" <%= 'selected' if @training.type == type %>><%=type.capitalize%></option>
           <%end%>
         </select>
 
@@ -17,15 +17,16 @@
         </select>
       </div>
       <div "input-container">
-        <input class="input-field" required="required" type="number" name="duration" placeholder="Duration" value="<%=@training.duration%>">
+        <input class="input-field" type="number" name="duration" placeholder="Duration" value="<%=@training.duration%>" required>
       </div>
       <div "input-container">
-        <input class="input-field" required="required" type="date" name="scheduled_date" placeholder="Date" value="<%=@training.scheduled_date%>">
+        <input class="input-field" type="date" name="scheduled_date" placeholder="Date" value="<%=@training.scheduled_date%>" required>
       </div>
       <div "input-container">
-        <input class="input-field" require="required" type="time" name="scheduled_time" placeholder="Time" value="<%=@training.scheduled_time%>">
+        <input class="input-field" type="time" name="scheduled_time" placeholder="Time" value="<%=@training.scheduled_time%>" required>
       </div>
       <input type="hidden" name="horse_id" value="<%=@training.horse_id%>">
       <input class="log-in-button button" type="submit" value="Edit">
     </div>
-    </div>
+  </div>
+</div>

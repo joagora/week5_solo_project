@@ -1,18 +1,39 @@
-<main class="table-container">
-  <%for training in @trainings%>
-    <dl>
-      <dt>Day</dt>
-      <dd><%=training.day_of_week%>
-      <dt>Type</dt>
-      <dd><%=training.type%>
-      <dt>Trainer</dt>
-      <dd><%=training.trainer.full_name%>
-      <dt>Date</dt>
-      <dd><%=training.scheduled_date%>
-      <dt>Time</dt>
-      <dd><%=training.format_time(training.scheduled_time)%>
-      </dd>
-    </dl>
-    <a href="/trainings/<%=training.id%>/edit"><button class="button more-button">Edit</button></a>
-  <%end%>
-</main>
+<div class="management-page">
+  <aside class="management-aside">
+    <ul>
+      <li><a href="/horses">Manage horses</a></li>
+      <li><a href="/trainings">Manage trainings</a></li>
+      <li><a href="/trainers">Manage trainers</a></li>
+      <li><a href="/owners">Manage owners</a></li>
+    </ul>
+  </aside>
+  <div class="management-image">
+    <div class="management-image-overlay">
+    </div>
+  </div>
+  <main class="management-area">
+    <div class="training-horses-owners-table ">
+      <div class="form-container">
+        <div class="table-container">
+          <%for training in @trainings%>
+          <dl>
+            <dt>Day</dt>
+            <dd><%=training.day_of_week%>
+              <dt>Type</dt>
+              <dd><%=training.type%>
+                <dt>Trainer</dt>
+                <dd><%=training.trainer.full_name%>
+                  <dt>Date</dt>
+                  <dd><%=training.scheduled_date%>
+                    <dt>Time</dt>
+                    <dd><%=training.format_time(training.scheduled_time)%>
+                    </dd>
+                  </dl>
+                  <a href="/trainings/<%=training.id%>/edit"><button class="button more-button">Edit</button></a>
+                  <%end%>
+                </div>
+              </div>
+            </div>
+          </main>
+
+        </div>

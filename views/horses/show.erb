@@ -1,24 +1,42 @@
+<div class="management-page">
+  <aside class="management-aside">
+    <ul>
+      <li><a href="/horses">Manage horses</a></li>
+      <li><a href="/trainings">Manage trainings</a></li>
+      <li><a href="/trainers">Manage trainers</a></li>
+      <li><a href="/owners">Manage owners</a></li>
+    </ul>
+  </aside>
+  <div class="management-image">
+    <div class="management-image-overlay">
+    </div>
+  </div>
+  <main class="management-area">
+    <div class="training-horses-owners-table ">
+      <div class="form-container">
+        <table>
+          <tr>
+            <th>Name</th>
+            <td><%=@horse.name%></td>
+          </tr>
+          <tr>
+            <th>Breed</th>
+            <td><%=@horse.breed%></td>
+          </tr>
+          <tr>
+            <th>Hair coat</th>
+            <td><%=@horse.hair_coat%></td>
+          </tr>
+        </table>
 
-  <main class="table-container">
-    <dl>
-      <dt>Name</dt>
-      <dd>
-        <%=@horse.name%>
-      </dd>
-      <dt>Breed</dt>
-      <dd>
-        <%=@horse.breed%>
-      </dd>
-      <dt>Hair coat</dt>
-      <dd>
-        <%=@horse.hair_coat%>
-      </dd>
-    </dl>
 
-    <section class="action-buttons-center">
-      <a href="/horses/<%=@horse.id%>/change_status"><button class="button more-button">Change status</button></a>
-      <a href="/trainings/new?horse_id=<%=@horse.id()%>"><button class="add-button button">Add training</button></a>
+        <section class="action-buttons-center">
+          <a href="/horses/<%=@horse.id%>/change_status"><button class="button more-button">Change status</button></a>
+          <a href="/trainings/new?horse_id=<%=@horse.id()%>"><button class="add-button button">Add training</button></a>
 
-      <a href="/horses/<%=@horse.id%>/trainings"><button class="more-button button">Trainings</button></a>
-    </section>
+          <a href="/horses/<%=@horse.id%>/trainings"><button class="more-button button">Trainings</button></a>
+        </section>
+      </div>
+    </div>
   </main>
+</div>

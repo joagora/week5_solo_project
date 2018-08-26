@@ -3,8 +3,8 @@
     <ul>
       <li><a href="/horses">Manage horses</a></li>
       <li><a href="/trainings">Manage trainings</a></li>
-      <li><a href="trainers">Manage trainers</a></li>
-      <li><a href="owners">Manage owners</a></li>
+      <li><a href="/trainers">Manage trainers</a></li>
+      <li><a href="/owners">Manage owners</a></li>
     </ul>
   </aside>
   <div class="management-image">
@@ -25,10 +25,10 @@
             <td><%=owner.username%></td>
             <td>
               <section class="action-buttons">
+                <a href="/owners/<%=owner.id%>/owners_horses"><button class="more-button button-small">View horses</button></a>
                 <form action="/owners/<%=owner.id%>/delete" method="post">
                   <input type="submit" name="delete" value="Delete" class="button-small delete-button">
                 </form>
-                <a href="/owners/<%=owner.id%>/owners_horses"><button class="more-button button-small">View horses</button></a>
               </section>
             </td>
           </tr>

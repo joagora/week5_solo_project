@@ -1,9 +1,9 @@
 <div class="log-in-page green-page">
   <form class="registration" action="/trainers/<%=@trainer.id%>" method="post">
-    <label for="first_name"></label>
-    <input class="input-field" type="text" name="first_name" value="<%=@trainer.first_name%>">
-    <label for="last_name"></label>
-    <input class="input-field" type="text" name="last_name" value="<%=@trainer.last_name%>">
+    <label class="input-label" for="first_name"></label>
+    <input class="input-field" type="text" name="first_name" placeholder="First name" value="<%=@trainer.first_name%>">
+    <label class="input-label" for="last_name"></label>
+    <input class="input-field" type="text" name="last_name" placeholder="Last name" value="<%=@trainer.last_name%>">
     <input class="more-button button" type="submit" value="Edit">
   </form>
 </div>

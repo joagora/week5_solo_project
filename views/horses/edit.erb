@@ -1,14 +1,14 @@
-<main class="content-container">
+<div class="log-in-page green-page">
   <form class="registration" action="/horses/<%=@horse.id%>" method="post">
-  <label for="name">Name</label>
-  <input class="input-field" placeholder="Name" type="text" name="name" value="<%=@horse.name%>">
-  <label for="breed">Breed</label>
-  <input class="input-field" placeholder="Breed" type="text" name="breed" value="<%=@horse.breed%>">
-  <label for="hair_coat">Hair coat</label>
-  <input class="input-field" placeholder="Hair coat" type="text" name="hair_coat" value="<%=@horse.hair_coat%>">
-  <label class="health-label" for="health_details">If your horse has any health-issues, specify it here:</label>
-  <textarea name="health_details" rows="4" cols="80" value="<%=@horse.health_details%>"></textarea>
-  <input type="hidden" name="owner_id" value="<%=@owner.id%>">
-  <input class="more-button button" type="submit" value="Edit">
-</form>
-</main>
+    <label class="input-label" for="name"></label>
+    <input class="input-field" placeholder="Name" type="text" name="name" value="<%=@horse.name%>">
+    <label class="input-label" for="breed"></label>
+    <input class="input-field" placeholder="Breed" type="text" name="breed" value="<%=@horse.breed%>">
+    <label class="input-label" for="hair_coat"></label>
+    <input class="input-field" placeholder="Hair coat" type="text" name="hair_coat" value="<%=@horse.hair_coat%>">
+    <label class="input-label" for="health_details">If your horse has any health-issues, specify it here:</label>
+    <textarea class="textarea-field" name="health_details" rows="4" cols="80" value="<%=@horse.health_details%>"></textarea>
+    <input type="hidden" name="owner_id" value="<%=@owner.id%>">
+    <input class="more-button button" type="submit" value="Edit">
+  </form>
+</div>
