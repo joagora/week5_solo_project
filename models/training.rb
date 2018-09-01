@@ -76,7 +76,9 @@ class Training
   end
 
   def format_time(time)
-    time.chomp[0...-3]
+    if time != nil
+      time.chomp[0...-3]
+    end
   end
 
   def self.sort_by_date

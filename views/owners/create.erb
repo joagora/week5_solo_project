@@ -1,7 +1,9 @@
+<div class="log-in-page green-page">
+  <div class="registration">
+    <div class="confirmation">
+        <p>Thank you, <%=@owner.first_name%> for your registration</p>
+    </div>
+    <a href="/owners/<%=@owner.id%>"><button class="more-button button">View profile</button></a>
 
-<div class="content-container">
-  <section class="confirmation">
-    <p>Thank you, <%=@owner.first_name%> for your registration</p>
-    <a href="/owners/<%=@owner.id%>"><button class="more-button button">View your profile</button></a>
-  </section>
+  </div>
 </div>
