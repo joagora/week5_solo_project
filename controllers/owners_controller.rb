@@ -1,7 +1,6 @@
 require('sinatra')
-require('sinatra/contrib/all')
+require('sinatra/contrib/all') if development?
 require_relative('../models/owner')
-also_reload('./models/*')
 
 
 get '/owners' do
