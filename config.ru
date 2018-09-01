@@ -1,4 +1,4 @@
 # config.ru
 
-require './controller.rb'
+require './app.rb'
 run Sinatra::Application
