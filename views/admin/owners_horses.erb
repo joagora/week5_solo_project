@@ -1,0 +1,38 @@
+<div class="management-page">
+<aside class="management-aside">
+  <ul>
+    <li><a href="/horses">Manage horses</a></li>
+    <li><a href="/trainings">Manage trainings</a></li>
+    <li><a href="/trainers">Manage trainers</a></li>
+    <li><a href="/owners">Manage owners</a></li>
+  </ul>
+</aside>
+<div class="management-image">
+  <div class="management-image-overlay">
+  </div>
+</div>
+<main class="management-area">
+  <div class="training-horses-owners-table ">
+    <div class="form-container">
+        <table>
+          <th>Name</th>
+          <th>Breed</th>
+          <th>Hair coat</th>
+          <th>Current_activity</th>
+          <th></th>
+          <%for horse in @horses_by_owner%>
+          <tr>
+            <td><%=horse.name%></td>
+            <td><%=horse.breed%></td>
+            <td><%=horse.hair_coat%></td>
+            <td><%=horse.current_activity%></td>
+            <td>
+              <div class="action-buttons"><a href="/horses/<%=horse.id%>/edit"><button class="more-button button-small">Edit</button></a></td>
+              </div>
+            </tr>
+            <%end%>
+          </table>
+        </div>
+      </div>
+  </main>
+</div>

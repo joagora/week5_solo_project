@@ -1,4 +1,4 @@
-<main class="content-container">
+<div class="log-in-page sand-background">
   <form class="registration" action="/horses/<%=@horse.id%>/change_status" method="post">
     <select class="input-field" name="current_activity">
         <option value="In training">In training</option>
@@ -10,18 +10,18 @@
         <option value="Other">Other</option>
     </select>
 
-    <label for="name"></label>
+    <label class="input-label" for="name"></label>
     <input type="hidden" name="name" value="<%=@horse.name%>">
-    <label for="breed"></label>
+    <label class="input-label" for="breed"></label>
     <input type="hidden" name="breed" value="<%=@horse.breed%>">
-    <label for="hair_coat"></label>
+    <label class="input-label" for="hair_coat"></label>
     <input type="hidden" name="hair_coat" value="<%=@horse.hair_coat%>">
     <input type="hidden" name="hair_coat" value="<%=@horse.hair_coat%>">
     <textarea class="hide" name="health_details" rows="4" cols="80" value="<%=@horse.health_details%>"></textarea>
     <input type="hidden" name="approved" value="TRUE">
     <input type="hidden" name="owner_id" value="<%=@horse.owner_id%>">
-    <input class="button edit-button" type="submit" name="status" value="Change status">
+    <input class="button log-in-button" type="submit" name="status" value="Change status">
 
 
   </form>
-</main>
+</div>

@@ -1,37 +1,41 @@
-
-<div class="content-container">
-  <a href="/trainers/new"><button class="add-button button">Add a trainer</button></a>
-</div>
-<div class="trainer-table">
-<main class="form-container">
-
-
-
-    <table>
-      <th>Name</th>
-
-      <th></th>
-      <%for trainer in @trainers%>
-      <tr>
-        <td><%=trainer.full_name%></td>
-
-        <td>
-          <section class="action-buttons">
-            <a href="/trainers/<%=trainer.id%>/edit"><button class="edit-button button-small">Edit</button></a>
-            <form action="/trainers/<%=trainer.id%>/delete" method="post">
-              <input type="submit" name="delete" value="Delete" class="delete-button button-small">
-            </form>
-          </section>
-        </td>
-        <%end%>
-      </tr>
-
-    </table>
-
-
-
-</main>
-</div>
-<div class="content-container">
-  <a href="/admin"><button class="more-button button">Go back</button></a>
+<div class="management-page">
+  <aside class="management-aside">
+    <ul>
+      <li><a href="/horses">Manage horses</a></li>
+      <li><a href="/trainings">Manage trainings</a></li>
+      <li><a href="trainers">Manage trainers</a></li>
+      <li><a href="owners">Manage owners</a></li>
+    </ul>
+  </aside>
+  <div class="management-image">
+    <div class="management-image-overlay">
+    </div>
+  </div>
+  <main class="management-area">
+    <div class="trainer-table">
+      <main class="form-container">
+        <table>
+          <th>Name</th>
+          <th></th>
+          <%for trainer in @trainers%>
+          <tr>
+            <td><%=trainer.full_name%></td>
+            <td>
+              <section class="action-buttons">
+                <a href="/trainers/<%=trainer.id%>/edit"><button class="more-button button-small">Edit</button></a>
+                <form action="/trainers/<%=trainer.id%>/delete" method="post">
+                  <input type="submit" name="delete" value="Delete" class="delete-button button-small">
+                </form>
+              </section>
+            </td>
+            <%end%>
+          </tr>
+        </table>
+      </main>
+    </div>
+    <div class="action-buttons-center">
+      <a href="/admin"><button class="more-button button">Go back</button></a>
+      <a href="/trainers/new"><button class="add-button button">Add a trainer</button></a>
+    </div>
+  </main>
 </div>
