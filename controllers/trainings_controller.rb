@@ -1,10 +1,8 @@
 require('sinatra')
-require('sinatra/contrib/all')
+require('sinatra/contrib/all') if development?
 require_relative('../models/training')
 require_relative('../models/trainer')
-also_reload('./models/*')
 
-require('pry-byebug')
 
 get '/trainings' do
   #sorting the array of objects by date

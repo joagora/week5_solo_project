@@ -1,5 +1,5 @@
 require_relative('../db/sql_runner')
-require('pry-byebug')
+
 class Owner
   attr_reader :id, :username
   attr_accessor :first_name, :last_name
