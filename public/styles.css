@@ -347,13 +347,7 @@ textarea {
   border-radius: 0;
 }
 
-textarea,
-input[type="text"],
-input[type="button"],
-input[type="submit"] {
--webkit-appearance: none;
-border-radius: 0;
-}
+
 
 .button-small {
   width: 90px;
@@ -403,6 +397,14 @@ border-radius: 0;
 
 .add-button {
   background-color: rgb(86, 114, 191);
+}
+
+textarea,
+input[type="text"],
+input[type="button"],
+input[type="submit"] {
+-webkit-appearance: none;
+border-radius: 0;
 }
 
 #logo {
