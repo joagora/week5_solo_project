@@ -400,12 +400,9 @@ textarea {
 }
 
 textarea,
-input[type="text"],
-input[type="button"],
-input[type="submit"] {
+input {
 -webkit-appearance: none;
 appearance: none;
-border-radius: 0;
 }
 
 #logo {
